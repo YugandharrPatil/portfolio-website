@@ -52,7 +52,7 @@ export default function Connect({ heading }: any) {
 					<form action={sendMessage}>
 						<div className="grid w-full items-center gap-4">
 							<div className="flex flex-col space-y-1.5">
-								<Label htmlFor="name">Your Name</Label>
+								<Label htmlFor="name">Name</Label>
 								<Input placeholder="Please enter your name" name="something" id="name" autoComplete="off" />
 							</div>
 							<div className="flex flex-col space-y-1.5">
@@ -61,7 +61,7 @@ export default function Connect({ heading }: any) {
 							</div>
 							<div className="flex flex-col space-y-1.5">
 								<Label htmlFor="message">Your message</Label>
-								<Textarea placeholder="Type your message here." id="message" name="message" />
+								<Textarea placeholder="Type your message here..." id="message" name="message" />
 							</div>
 						</div>
 					</form>

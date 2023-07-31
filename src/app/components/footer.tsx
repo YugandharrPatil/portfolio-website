@@ -1,11 +1,13 @@
-import Hr from "./hr";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default function Footer({ heading }: any) {
+export default function Footer() {
 	return (
 		<>
-			<h1 className="text-3xl text-center">{heading}</h1>
-			<main className="max-w-screen-2xl">This is some footer content</main>
-			<Hr />
+			<footer className="bg-slate-900">
+				<main className="w-5/6 mx-auto">This is some footer content</main>
+				<FontAwesomeIcon icon={faCheck} className="fas fa-check" style={{ fontSize: 20 }} /> {/* color: "red"*/}
+			</footer>
 		</>
 	);
 }
