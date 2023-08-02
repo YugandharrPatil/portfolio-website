@@ -4,6 +4,7 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 import { useState } from "react";
 import Hr from "./hr";
+import SkillCard from "./skill-card";
 import { Card } from "./ui/card";
 
 export default function Skills({ heading }: any) {
@@ -23,9 +24,13 @@ export default function Skills({ heading }: any) {
 			<h1 className="text-3xl text-center mt-10" id="skills">
 				{heading}
 			</h1>
+
+			<SkillCard lightIcon="/webdevlight.png" darkIcon="/webdevdark.png" />
+
 			<Card className="w-5/6 mx-auto flex gap-2">
 				<div className="buttons flex-wrap w-1/2 flex">
 					{/* WEBDEV */}
+
 					<Card
 						onClick={() => setSkillDescription(webdev)}
 						className="cursor-pointer w-32 h-32 p-5 m-1 text-center hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-800 dark:hover:text-slate-50"
