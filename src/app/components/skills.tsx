@@ -1,99 +1,75 @@
 "use client";
-import { Button } from "@/app/components/ui/button";
-import { useTheme } from "next-themes";
-import Image from "next/image";
 import { useState } from "react";
+import Heading from "./heading";
 import Hr from "./hr";
 import SkillCard from "./skill-card";
+import SkillDescription from "./skill-description";
 import { Card } from "./ui/card";
 
-export default function Skills({ heading }: any) {
-	const { theme } = useTheme();
-
+export default function Skills() {
 	const [skillDescription, setSkillDescription] = useState("All Skills Description");
 
-	const webdev = "Sample webdev content";
-	const appdev = "Sample appdev content";
-	const blockchaindev = "Sample blockchaindev content";
-	const cybersec = "Sample cybersec content";
-	const gamedev = "Sample gamedev content";
-	const devops = "Sample devops content";
+	const webdev = "Sample webdev description";
+	const appdev = "Sample appdev description";
+	const blockchaindev = "Sample blockchaindev description";
+	const cybersec = "Sample cybersec description";
+	const gamedev = "Sample gamedev description";
+	const devops = "Sample devops description";
 
 	return (
 		<>
-			<h1 className="text-3xl text-center mt-10" id="skills">
-				{heading}
-			</h1>
-
-			<SkillCard lightIcon="/webdevlight.png" darkIcon="/webdevdark.png" />
+			<Heading heading="Skills" />
 
 			<Card className="w-5/6 mx-auto flex gap-2">
+				{/* BUTTONS */}
 				<div className="buttons flex-wrap w-1/2 flex">
-					{/* WEBDEV */}
-
-					<Card
-						onClick={() => setSkillDescription(webdev)}
-						className="cursor-pointer w-32 h-32 p-5 m-1 text-center hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-800 dark:hover:text-slate-50"
-					>
-						<Image className="mx-auto" src={theme === "dark" ? "/webdevlight.png" : "/webdevdark.png"} alt="webdev" width={50} height={50}></Image>
-						<p>Web Dev</p>
-					</Card>
-
-					{/* APPDEV */}
-					<Card
-						onClick={() => setSkillDescription(appdev)}
-						className="w-32 h-32 p-5 m-1 text-center cursor-pointer hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-800 dark:hover:text-slate-50"
-					>
-						<Image className=" mx-auto" src={theme === "dark" ? "/appdevlight.png" : "/appdevdark.png"} alt="webdev" width={50} height={50}></Image>
-						<p>App Dev</p>
-					</Card>
-
-					{/* BLOCKCHAINDEV */}
-					<Card
-						onClick={() => setSkillDescription(blockchaindev)}
-						className="cursor-pointer w-32 h-32 p-5 m-1 text-center hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-800 dark:hover:text-slate-50"
-					>
-						<Image
-							className=" mx-auto"
-							src={theme === "dark" ? "/blockchaindevlight.png" : "/blockchaindevdark.png"}
-							alt="webdev"
-							width={50}
-							height={50}
-						></Image>
-						<p>Blockchain Dev</p>
-					</Card>
-
-					{/* CYBERSEC */}
-					<Card
-						onClick={() => setSkillDescription(cybersec)}
-						className="cursor-pointer w-32 h-32 p-5 m-1 text-center hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-800 dark:hover:text-slate-50"
-					>
-						<Image
-							className=" mx-auto"
-							src={theme === "dark" ? "/cyberseclight.png" : "/cybersecdark.png"}
-							alt="webdev"
-							width={50}
-							height={50}
-						></Image>
-						<p>Cyber Security</p>
-					</Card>
-
-					{/* GAMEDEV */}
-					<Card
-						onClick={() => setSkillDescription(gamedev)}
-						className="cursor-pointer w-32 h-32 p-5 m-1 text-center hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-800 dark:hover:text-slate-50"
-					>
-						<Image
-							className="cursor-pointer mx-auto"
-							src={theme === "dark" ? "/gamedevlight.png" : "/gamedevdark.png"}
-							alt="webdev"
-							width={50}
-							height={50}
-						></Image>
-						<p>Game Dev</p>
-					</Card>
+					<SkillCard
+						setDescription={() => setSkillDescription(webdev)}
+						altText="webdev"
+						lightIcon="/webdevlight.png"
+						darkIcon="/webdevdark.png"
+						skill="Web Dev"
+					/>
+					<SkillCard
+						setDescription={() => setSkillDescription(appdev)}
+						altText="appdev"
+						lightIcon="/appdevlight.png"
+						darkIcon="/appdevdark.png"
+						skill="App Dev"
+					/>
+					<SkillCard
+						altText="blockchaindev"
+						setDescription={() => setSkillDescription(blockchaindev)}
+						lightIcon="/blockchaindevlight.png"
+						darkIcon="/blockchaindevdark.png"
+						skill="Blockchain Dev"
+					/>
+					<SkillCard
+						altText="gamedev"
+						setDescription={() => setSkillDescription(gamedev)}
+						lightIcon="/gamedevlight.png"
+						darkIcon="/gamedevdark.png"
+						skill="Game Dev"
+					/>
+					<SkillCard
+						altText="devops"
+						setDescription={() => setSkillDescription(devops)}
+						lightIcon="/devopslight.png"
+						darkIcon="/devopsdark.png"
+						skill="DevOps"
+					/>
+					<SkillCard
+						altText="cybersec"
+						setDescription={() => setSkillDescription(cybersec)}
+						lightIcon="/cyberseclight.png"
+						darkIcon="/cybersecdark.png"
+						skill="Cybersecurity"
+					/>
 				</div>
+
+				{/* DESCRIPTION */}
 				<p className="text-xl">{skillDescription}</p>
+				<SkillDescription />
 			</Card>
 			<Hr />
 		</>

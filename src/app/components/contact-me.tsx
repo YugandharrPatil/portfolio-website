@@ -5,6 +5,7 @@ import { Label } from "@/app/components/ui/label";
 import { Textarea } from "@/app/components/ui/textarea";
 import { db } from "@/lib/db";
 import { messages } from "@/lib/db/schema";
+import Heading from "./heading";
 import Hr from "./hr";
 
 const sendMessage = async (data: FormData) => {
@@ -37,12 +38,10 @@ const sendMessage = async (data: FormData) => {
 	}
 };
 
-export default function Connect({ heading }: any) {
+export default function Connect() {
 	return (
 		<>
-			<h1 className="text-3xl text-center my-5" id="contact">
-				{heading}
-			</h1>
+			<Heading heading="Connect with Me!" />
 			<Card className="w-1/3 mx-auto mb-10">
 				<CardHeader className="text-center">
 					<CardTitle className="text-2xl">Write me a message!</CardTitle>

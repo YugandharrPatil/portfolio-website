@@ -76,3 +76,11 @@
 		@apply bg-background text-foreground;
 	}
 }
+
+.bg-dark {
+	background-color: #020817;
+}
+
+.fg-dark {
+	color: #f8fafc;
+}

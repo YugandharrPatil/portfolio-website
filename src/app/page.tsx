@@ -1,4 +1,4 @@
-import Connect from "./components/connect";
+import Connect from "./components/contact-me";
 import Footer from "./components/footer";
 import Header from "./components/header";
 import Navbar from "./components/navbar";
@@ -9,10 +9,10 @@ export default async function HomePage() {
 	return (
 		<>
 			<Navbar />
-			<Header heading="Header" />
-			<Skills heading="Skills" />
-			<Projects heading="Projects" />
-			<Connect heading="Connect With Me!" />
+			<Header />
+			<Skills />
+			<Projects />
+			<Connect />
 			<Footer />
 		</>
 	);
