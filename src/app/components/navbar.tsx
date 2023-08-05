@@ -1,6 +1,5 @@
 "use client";
 
-import { Button } from "@/app/components/ui/button";
 import { useTheme } from "next-themes";
 import { Lato, Stalemate } from "next/font/google";
 import Link from "next/link";
@@ -20,14 +19,12 @@ const lato = Lato({
 export default function Navbar() {
 	const { theme } = useTheme();
 
-	console.log(theme);
-
 	return (
 		<>
-			<nav className={`h-20 sticky top-0 z-50 ${theme !== undefined && theme === "dark" ? "bg-dark" : "bg-white"}`}>
+			<nav className={`h-24 sticky top-0 z-50 ${theme !== undefined && theme === "dark" ? "bg-dark" : "bg-white"}`}>
 				<div className="h-full items-center flex justify-between gap-2 w-5/6 mx-auto">
 					<Link href="#">
-						<h1 className={`logo text-[3.2rem] mt-2 ${stalemate.className}`}>Yugandhar</h1>
+						<h1 className={`logo text-[3.2rem] mt-0 ${stalemate.className}`}>Yugandhar</h1>
 					</Link>
 					<div className="flex gap-4">
 						<NavItem navText="Skills" target="#skills" />

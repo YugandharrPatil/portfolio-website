@@ -6,7 +6,6 @@ import { Textarea } from "@/app/components/ui/textarea";
 import { db } from "@/lib/db";
 import { messages } from "@/lib/db/schema";
 import Heading from "./heading";
-import Hr from "./hr";
 
 const sendMessage = async (data: FormData) => {
 	"use server";
@@ -71,7 +70,6 @@ export default function Connect() {
 					</Button>
 				</CardFooter>
 			</Card>
-			<Hr />
 		</>
 	);
 }
