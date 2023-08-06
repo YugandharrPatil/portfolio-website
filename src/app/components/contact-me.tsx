@@ -41,7 +41,7 @@ export default function Connect() {
 	return (
 		<>
 			<Heading heading="Connect with Me!" />
-			<Card className="w-1/3 mx-auto mb-10">
+			<Card className="w-10/12 sm:w-8/12 md:w-8/12 lg:w-7/12 xl:w-5/12 2xl:w-1/3 mx-auto mb-10">
 				<CardHeader className="text-center">
 					<CardTitle className="text-2xl">Write me a message!</CardTitle>
 					<CardDescription>Have a project in mind? Something I can help with?</CardDescription>

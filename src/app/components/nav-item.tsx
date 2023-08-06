@@ -10,8 +10,10 @@ const lato = Lato({
 
 export default function NavItem({ navText, target }: { navText: string; target: string }) {
 	return (
-		<Button asChild variant="ghost" className={`mr-3 text-[1.1rem] tracking-wide ${lato.className}`}>
-			<Link href={target}>{navText}</Link>
-		</Button>
+		<>
+			<Button asChild variant="ghost" className={`mr-3 text-[1.1rem] tracking-wide ${lato.className}`}>
+				<Link href={target}>{navText}</Link>
+			</Button>
+		</>
 	);
 }
