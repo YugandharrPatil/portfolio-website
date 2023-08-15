@@ -1,22 +1,13 @@
 "use client";
 
-import { ThemeProvider } from "@/app/components/theme-provider";
 import { Bone, Layout, Menu, Send, X } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Stalemate } from "next/font/google";
 import Link from "next/link";
 import NavItem from "./nav-item";
-import NavLink from "./nav-link";
 import ThemeToggle from "./theme-toggle";
 import { Button } from "./ui/button";
-import {
-	DropdownMenu,
-	DropdownMenuContent,
-	DropdownMenuItem,
-	DropdownMenuLabel,
-	DropdownMenuSeparator,
-	DropdownMenuTrigger,
-} from "./ui/dropdown-menu";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "./ui/dropdown-menu";
 
 const stalemate = Stalemate({
 	weight: "400",
@@ -41,32 +32,27 @@ export default function Navbar() {
 						</div>
 						<div className="dropdown md:hidden">
 							<DropdownMenu>
-								<DropdownMenuTrigger>
+								<DropdownMenuTrigger asChild>
 									<Button variant="ghost" size="icon">
 										<Menu className="h-[1.2rem] w-[1.2rem]" />
-										{/* <X className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" /> */}
-										{/* <span className="sr-only">Toggle theme</span> */}
 									</Button>
 								</DropdownMenuTrigger>
 								<DropdownMenuContent className="w-32">
-									<DropdownMenuItem>
-										{/* <NavLink navText="Skills" target="#skills" /> */}
-										<Bone className="mr-2 h-4 w-4" />
+									<DropdownMenuItem asChild>
 										<span>
+											<Bone className="mr-2 h-4 w-4 inline" />
 											<Link href="#skills">Skills</Link>
 										</span>
 									</DropdownMenuItem>
-									<DropdownMenuItem>
-										{/* <NavLink navText="Projects" target="#projects" /> */}
-										<Layout className="mr-2 h-4 w-4" />
+									<DropdownMenuItem asChild>
 										<span>
+											<Layout className="mr-2 h-4 w-4 inline" />
 											<Link href="#projects">Projects</Link>
 										</span>
 									</DropdownMenuItem>
-									<DropdownMenuItem>
-										{/* <NavLink navText="Contact Me" target="#contactme" /> */}
-										<Send className="mr-2 h-4 w-4" />
+									<DropdownMenuItem asChild>
 										<span>
+											<Send className="mr-2 h-4 w-4 inline" />
 											<Link href="#contact">Contact Me</Link>
 										</span>
 									</DropdownMenuItem>

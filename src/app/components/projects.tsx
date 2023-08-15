@@ -38,13 +38,22 @@ export default function Projects() {
 					<AccordionTrigger>Blockchain App Development</AccordionTrigger>
 					<AccordionContent>
 						<Card className="flex flex-wrap justify-center gap-4 md:gap-4 md:gap-x-3 lg-gap-2 lg-gap-x-8 xl:gap-2 xl:gap-x-20 2xl:gap-2 2xl:gap-x-16">
-							{/* <ProjectCardCustom /> */}
 				{/* <ProjectCard repo="todo-list" alt="todo-list" />
 							<ProjectCard repo="todo-list" alt="todo-list" />
 							<ProjectCard repo="todo-list" alt="todo-list" />
 						</Card>
 					</AccordionContent> */}
 				{/* </AccordionItem> */}
+				<AccordionItem value="item-3">
+					<AccordionTrigger className="ml-4 text-[1.05rem]">Game Development</AccordionTrigger>
+					<AccordionContent>
+						<Card className="flex flex-wrap justify-center gap-4 md:gap-4 md:gap-x-3 lg-gap-2 lg-gap-x-8 xl:gap-2 xl:gap-x-20 2xl:gap-2 2xl:gap-x-16">
+							<ProjectCard repo="desert-runner" alt="desert-runner" />
+							<ProjectCard repo="gold-rush" alt="gold-rush" />
+							{/* <ProjectCard repo="todo-list" alt="todo-list" /> */}
+						</Card>
+					</AccordionContent>
+				</AccordionItem>
 			</Accordion>
 			<div className="my-40">
 				<Hr />

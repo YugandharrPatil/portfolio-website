@@ -3,21 +3,20 @@ import { useState } from "react";
 import Heading from "./heading";
 import Hr from "./hr";
 import SkillCard from "./skill-card";
-import SkillDescription from "./skill-description";
 import { Card } from "./ui/card";
 
 export default function Skills() {
 	const [skillDescription, setSkillDescription] = useState({
 		heading: "My Skills",
 		content:
-			"A self-taught programmer on an incredible journey, I've traversed an inspiring path of growth and discovery. From my humble beginnings, I've harnessed the power of determination to evolve into the skilled developer I am today. My journey is a testament to the potential of self-guided learning and the boundless horizons it can unv",
+			"As a self-taught programmer on an incredible journey, I've traversed an inspiring path of growth and discovery. All of what I know, I owe to the most amazing Youtube tutorials, blogs, open-source figures, free repositories without whom, I couldn't have pivoted into this passion of mine!",
 	});
 
 	const data = {
 		webdev: {
 			heading: "Full-Stack Web Development",
 			content:
-				"I've been developing websites for the past 2 years. I mainly work with in NodeJS and am familiar with frameworks like Next, React, Express, Tailwind & Prisma. I've done client work for more than 10 clients up until now. I'm open for client work for developing websites, so feel free to hit me up! Please check my projects below",
+				"I've been developing websites for the past 2 years. I mainly work with NodeJS and am familiar with frameworks like Next, React, Express, Tailwind & Prisma. I've done client work for more than 10 clients up until now. I'm open for client work for developing websites, so feel free to hit me up! Please check my projects below",
 		},
 		appdev: {
 			heading: "Mobile App Development",
@@ -97,11 +96,10 @@ export default function Skills() {
 					/>
 				</div>
 				{/* DESCRIPTION */}
-				<div className="pr-5 w-full pb-2">
+				<div className="pr-5 w-full mb-5">
 					<h1 className="text-[1.2rem] sm:text-[1.3rem] md:text-[1.6rem] font-bold mt-3">{skillDescription.heading}</h1>
 					<p className="text-[1rem] md:text-[1.05rem] mt-3">{skillDescription.content}</p>
 				</div>
-				<SkillDescription /> {/*this component contains the description for each skill, switches dynamically for each skill*/}
 			</Card>
 			<div className="my-40">
 				<Hr />
