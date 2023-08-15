@@ -67,7 +67,7 @@ export default function Navbar() {
 										{/* <NavLink navText="Contact Me" target="#contactme" /> */}
 										<Send className="mr-2 h-4 w-4" />
 										<span>
-											<Link href="#contactme">Contact Me</Link>
+											<Link href="#contact">Contact Me</Link>
 										</span>
 									</DropdownMenuItem>
 								</DropdownMenuContent>

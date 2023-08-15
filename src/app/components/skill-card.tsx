@@ -8,7 +8,7 @@ export default function SkillCard({ lightIcon, darkIcon, skill, altText, setDesc
 	const { theme } = useTheme();
 
 	return (
-		<Card onClick={setDescription} className="cursor-pointer w-32 h-32 p-5 m-3 text-center hover:bg-slate-100 dark:hover:bg-slate-900">
+		<Card onClick={setDescription} className="cursor-pointer w-32 h-32 p-5 m-2 text-center hover:bg-slate-100 dark:hover:bg-slate-900">
 			<Image className="mx-auto" src={theme === "dark" ? lightIcon : darkIcon} alt={altText} width={50} height={50}></Image>
 			<p>{skill}</p>
 		</Card>

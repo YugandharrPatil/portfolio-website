@@ -21,21 +21,21 @@ export default function Header() {
 						Yugandhar <br />
 						Patil
 					</h1>
-					<h2 className={`${sourceCodePro.className} text-2xl mt-5`}>I Build With Code.</h2>
+					<h2 className={`${sourceCodePro.className} text-2xl mt-5 lg:mt-8`}>I Build With Code.</h2>
 					<p className="mt-10">
-						I am a self-taught programmer from India
-						<Image className="inline" src="/flag.png" width={25} height={25} alt="India" />! I started out as a directionless kid, worked my way up
-						the software development ladder by learning new skills & taking up new challenges. Lorem ipsum dolor sit amet consectetur adipisicing
-						elit. Voluptas, saepe!
+						Hello! I&apos;m Yugandhar, a self-taught programmer from India
+						<Image className="inline" src="/flag.png" width={25} height={25} alt="India" />! My journey in the realm of tech has been a fascinating
+						exploration, driven by a genuine curiosity for how things work behind the scenes. With a knack for problem-solving and a passion for
+						creating efficient solutions, I enjoy bringing ideas to life through clean and elegant code.
 					</p>
 					<p className="mt-10">
-						Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente porro magnam cupiditate nisi perferendis consequatur beatae! Fugit ab
-						quidem modi, excepturi ex voluptatum repudiandae perferendis expedita doloribus cumque eum nihil?
+						My Passion: Build amazing products, one line of code at a time. Let&apos;s join forces and navigate the exciting possibilities that lie
+						ahead!
 					</p>
 				</div>
 				<div className="xl:w-1/2 xl:relative order-first xl:order-last">
 					<Image
-						className="xl:absolute right-0 w-full sm:h-[40rem] mx-auto 2xl:h-full sm:w-auto"
+						className="right-0 xl:absolute w-full sm:h-[40rem] mx-auto 2xl:h-full sm:w-auto"
 						src="/profile.jpg"
 						width={8274}
 						height="0"
