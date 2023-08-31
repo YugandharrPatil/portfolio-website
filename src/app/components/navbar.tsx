@@ -1,6 +1,6 @@
 "use client";
 
-import { Bone, Layout, Menu, Send, X } from "lucide-react";
+import { Bone, Layout, Menu, Pencil, Send, X } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Stalemate } from "next/font/google";
 import Link from "next/link";
@@ -29,6 +29,7 @@ export default function Navbar() {
 							<NavItem navText="Skills" target="#skills" />
 							<NavItem navText="Projects" target="#projects" />
 							<NavItem navText="Contact Me" target="#contact" />
+							<NavItem navText="My Blog!" target="https://blog.yugandharr.com" />
 						</div>
 						<div className="dropdown md:hidden">
 							<DropdownMenu>
@@ -54,6 +55,12 @@ export default function Navbar() {
 										<span>
 											<Send className="mr-2 h-4 w-4 inline" />
 											<Link href="#contact">Contact Me</Link>
+										</span>
+									</DropdownMenuItem>
+									<DropdownMenuItem asChild>
+										<span>
+											<Pencil className="mr-2 h-4 w-4 inline" />
+											<Link href="https://blog.yugandharr.com">My Blog</Link>
 										</span>
 									</DropdownMenuItem>
 								</DropdownMenuContent>
