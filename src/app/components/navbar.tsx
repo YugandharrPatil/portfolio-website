@@ -22,7 +22,7 @@ export default function Navbar() {
 			<nav className={`h-24 sticky top-0 z-50 ${theme === "light" ? "bg-white" : "bg-dark"}`}>
 				<div className="h-full items-center flex justify-between gap-2 w-11/12 xl:w-5/6 lg:w-11/12 md:w-5/6 sm:w-5/6 mx-auto">
 					<Link href="#">
-						<h1 className={`logo text-[3.2rem] mt-0 ${stalemate.className}`}>Yugandhar</h1>
+						<h1 className={`logo text-[3.2rem] mt-0 ${stalemate.className} hover:text-neutral-500`}>Yugandhar</h1>
 					</Link>
 					<div className="flex gap-4">
 						<div className="md:block hidden">

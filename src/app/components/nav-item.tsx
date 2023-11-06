@@ -1,6 +1,5 @@
 import { Lato } from "next/font/google";
 import Link from "next/link";
-import React from "react";
 import { Button } from "./ui/button";
 
 const lato = Lato({

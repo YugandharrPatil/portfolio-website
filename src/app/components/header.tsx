@@ -23,21 +23,26 @@ export default function Header() {
 					</h1>
 					<h2 className={`${sourceCodePro.className} text-2xl mt-5 lg:mt-8`}>I Build With Code.</h2>
 					<p className="mt-10">
-						Hello! I&apos;m Yugandhar, a self-taught programmer from India
-						<Image className="inline" src="/flag.png" width={25} height={25} alt="India" />! My journey in the realm of tech has been a fascinating
-						exploration, driven by a genuine curiosity for how things work behind the scenes. With a knack for problem-solving and a passion for
-						creating efficient solutions, I enjoy bringing ideas to life through clean and elegant code.
+						<span className="font-bold text-lg">Hey there! Welcome to my Website!</span> <br /> I&apos;m Yugandhar, an indie software developer from
+						India
+						<Image className="inline" src="/flag.png" width={25} height={25} alt="India" />! My passion for technology stems from my love for
+						computers ever since my dad got me one when I was 8, and I&apos;ve never looked back ever since!
+						<br />
+						<br />
+						I&apos;m a completely self-taught programmer with a knack for problem-solving and a passion for creating efficient software solutions. I
+						enjoy bringing ideas to life through clean and elegant code.
 					</p>
 					<p className="mt-10">
-						My Passion: Build amazing products, one line of code at a time. Let&apos;s join forces and navigate the exciting possibilities that lie
-						ahead!
+						<strong>My Passion:</strong> Build cutting-edge tech products, one line of code at a time.
+						<br />
+						Let&apos;s join forces and navigate the exciting possibilities that lie ahead
 					</p>
 				</div>
 				<div className="xl:w-1/2 xl:relative order-first xl:order-last">
 					<Image
 						className="right-0 xl:absolute w-full sm:h-[40rem] mx-auto 2xl:h-full sm:w-auto"
-						src="/profile.jpg"
-						width={8274}
+						src="/pic.jpeg"
+						width={1000}
 						height="0"
 						alt="profile"
 					/>

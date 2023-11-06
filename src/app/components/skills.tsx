@@ -16,12 +16,12 @@ export default function Skills() {
 		webdev: {
 			heading: "Full-Stack Web Development",
 			content:
-				"I've been developing websites for the past 2 years. I mainly work with NodeJS and am familiar with frameworks like Next, React, Express, Tailwind & Prisma. I've done client work for more than 10 clients up until now. I'm open for client work for developing websites, so feel free to hit me up! Please check my projects below",
+				"I've been developing websites for the past 3 years. I mainly work with NodeJS and am experienced in frameworks like Next, React, Express, Tailwind & Prisma. I've done client work for more than 10 clients up until now. I'm open for client work for developing websites, so feel free to hit me up! Kindly check my projects below",
 		},
 		appdev: {
 			heading: "Mobile App Development",
 			content:
-				"I build mobile apps exclusively in React Native. This is something I'm still trying to get grips with. Feel free to check out my app dev project below!",
+				"I build mobile apps exclusively in React Native and Kotlin. This is something I'm still trying to get grips with. Feel free to check out my app dev projects below!",
 		},
 		blockchaindev: {
 			heading: "Blockchain App Development",
@@ -31,7 +31,7 @@ export default function Skills() {
 		gamedev: {
 			heading: "Game Development",
 			content:
-				"Being an avid gamer, game development is something I'm really passionate about. I taught myself game development since my first year and won a hackathon in my second! I mainly build in the Unity game engine with C#. Checkout my projects below!",
+				"Being an avid gamer, game development is something I'm really passionate about. I taught myself game development since my first year and won a hackathon in my sophomore year! I mainly build in the Unity game engine with C#. Checkout my projects below!",
 		},
 		devops: {
 			heading: "DevOps",
@@ -41,7 +41,7 @@ export default function Skills() {
 		cybersec: {
 			heading: "Cybersecurity",
 			content:
-				"This is something I've recently stepped foot into. I was always fascinated by hacking based movies. I believe the security of our software products should be given as much importance as it's performance and UI!",
+				"This is something I've recently stepped foot into. I was always fascinated by hacking based movies. I believe the security of our software products should be given as much importance as it's performance and UX!",
 		},
 	};
 
@@ -87,13 +87,13 @@ export default function Skills() {
 						darkIcon="/devopsdark.png"
 						skill="DevOps"
 					/> */}
-					<SkillCard
+					{/* <SkillCard
 						altText="cybersec"
 						setDescription={() => setSkillDescription(data.cybersec)}
 						lightIcon="/cyberseclight.png"
 						darkIcon="/cybersecdark.png"
 						skill="Cybersecurity"
-					/>
+					/> */}
 				</div>
 				{/* DESCRIPTION */}
 				<div className="pr-5 w-full mb-5">
