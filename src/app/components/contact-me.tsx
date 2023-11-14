@@ -64,13 +64,13 @@ export default function Connect() {
 								<Textarea placeholder="Type your message here..." id="message" name="message" />
 							</div>
 						</div>
+						<CardFooter>
+							<Button type="submit" className="w-full">
+								Send Message
+							</Button>
+						</CardFooter>
 					</form>
 				</CardContent>
-				<CardFooter>
-					<Button type="submit" className="w-full">
-						Send Message
-					</Button>
-				</CardFooter>
 			</Card>
 		</>
 	);
