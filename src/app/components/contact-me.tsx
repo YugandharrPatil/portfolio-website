@@ -48,8 +48,8 @@ export default function Connect() {
 						Have a project in mind? Something I can help with? <br /> Totally open to hearing from you!
 					</CardDescription>
 				</CardHeader>
-				<CardContent>
-					<form action={sendMessage}>
+				<form action={sendMessage}>
+					<CardContent>
 						<div className="grid w-full items-center gap-4">
 							<div className="flex flex-col space-y-1.5">
 								<Label htmlFor="name">Name</Label>
@@ -64,13 +64,13 @@ export default function Connect() {
 								<Textarea placeholder="Type your message here..." id="message" name="message" />
 							</div>
 						</div>
-						<CardFooter>
-							<Button type="submit" className="w-full">
-								Send Message
-							</Button>
-						</CardFooter>
-					</form>
-				</CardContent>
+					</CardContent>
+					<CardFooter>
+						<Button type="submit" className="w-full">
+							Send Message
+						</Button>
+					</CardFooter>
+				</form>
 			</Card>
 		</>
 	);

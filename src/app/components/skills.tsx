@@ -16,7 +16,7 @@ export default function Skills() {
 		webdev: {
 			heading: "Full-Stack Web Development",
 			content:
-				"I've been developing websites for the past 3 years. I mainly work with NodeJS and am experienced in frameworks like Next, React, Express, Tailwind & Prisma. I've done client work for more than 10 clients up until now. I'm open for client work for developing websites, so feel free to hit me up! Kindly check my projects below",
+				"I've been developing websites for the past 3 years. I mainly work with NodeJS and am experienced in frameworks like Next, React, Express, Tailwind & Prisma. I've done client work for more than 10 clients up until now. I'm open for client work for developing websites, so feel free to hit me up! Kindly check my projects below.",
 		},
 		appdev: {
 			heading: "Mobile App Development",
