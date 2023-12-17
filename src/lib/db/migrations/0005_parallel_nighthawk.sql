@@ -1,0 +1,1 @@
+ALTER TABLE `messages` RENAME COLUMN `something` TO `name`;

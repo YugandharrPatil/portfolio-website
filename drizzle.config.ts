@@ -6,7 +6,11 @@ export default {
 	out: "./src/lib/db/migrations",
 	driver: "mysql2",
 	dbCredentials: {
-		connectionString: process.env.DATABASE_URL!,
+		host: process.env.DATABASE_HOST as string,
+		user: process.env.DATABASE_USERNAME,
+		password: process.env.DATABASE_PASSWORD,
+		uri: process.env.DATABASE_URL as string,
+		// connectionString: process.env.DATABASE_URL!,
 	},
 	breakpoints: true,
 } satisfies Config;

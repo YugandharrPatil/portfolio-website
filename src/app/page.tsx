@@ -1,4 +1,4 @@
-import Connect from "./components/contact-me";
+import ContactForm from "./components/contact-form";
 import Footer from "./components/footer";
 import Header from "./components/header";
 import Navbar from "./components/navbar";
@@ -12,7 +12,7 @@ export default async function HomePage() {
 			<Header />
 			<Skills />
 			<Projects />
-			<Connect />
+			<ContactForm />
 			<Footer />
 		</>
 	);
