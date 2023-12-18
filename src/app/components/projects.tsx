@@ -1,10 +1,39 @@
+import axios from "axios";
+import CardProject from "./card-project";
 import Heading from "./heading";
 import Hr from "./hr";
-import ProjectCard from "./project-card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./ui/card";
 
-export default function Projects() {
+const fetchRepos = async () => {
+	try {
+		const { data } = await axios.get("https://api.github.com/users/YugandharrPatil/repos", {
+			headers: {
+				auth: process.env.GITHUB_AUTH_TOKEN,
+			},
+		});
+		console.log(data);
+		return data;
+	} catch (err) {
+		console.error(err);
+		return;
+	}
+};
+
+export default async function Projects() {
+	const repos = await fetchRepos();
+	let webDevRepos: any = [];
+	webDevRepos.push(repos.filter((repo: any) => repo.name === "portfolio-website"));
+	webDevRepos.push(repos.filter((repo: any) => repo.name === "form-types"));
+	webDevRepos.push(repos.filter((repo: any) => repo.name === "gramhealth-website"));
+	webDevRepos.push(repos.filter((repo: any) => repo.name === "free-electric-bicycles"));
+	webDevRepos.push(repos.filter((repo: any) => repo.name === "graux-website"));
+
+	let appDevRepos: any = [];
+	appDevRepos.push(repos.filter((repo: any) => repo.name === "job-portal"));
+	appDevRepos.push(repos.filter((repo: any) => repo.name === "form-types"));
+	appDevRepos.push(repos.filter((repo: any) => repo.name === "gramhealth-website"));
+
 	return (
 		<>
 			<Heading heading="Projects" id="projects" />
@@ -13,44 +42,70 @@ export default function Projects() {
 				<AccordionItem value="item-1">
 					<AccordionTrigger className="ml-4 text-[1.05rem]">Web Development</AccordionTrigger>
 					<AccordionContent>
-						<Card className="flex flex-wrap max-[703px]:justify-center justify-between gap-2">
-							<ProjectCard repo="graux-website" alt="graux" />
-							<ProjectCard repo="weather" alt="weather-app" />
-							<ProjectCard repo="todo-list" alt="todo-list" />
-							<ProjectCard repo="free-electric-bicycles" alt="electric-bicycles" />
-							<ProjectCard repo="shopping-list" alt="shopping-list" />
-							<ProjectCard repo="tindog" alt="tindog" />
-							<ProjectCard repo="drumkit" alt="drumkit" />
+						<Card className="flex flex-wrap justify-around gap-2 p-3">
+							<CardProject
+								repoName={webDevRepos[0][0].name}
+								repoDescription={webDevRepos[0][0].description}
+								languages={webDevRepos[0][0].language}
+								repoURL={webDevRepos[0][0].html_url}
+								hostingURL={webDevRepos[0][0].homepage}
+							/>
+							<CardProject
+								repoName={webDevRepos[1][0].name}
+								repoDescription={webDevRepos[1][0].description}
+								languages={webDevRepos[1][0].language}
+								repoURL={webDevRepos[1][0].html_url}
+								hostingURL={webDevRepos[1][0].homepage}
+							/>
+							<CardProject
+								repoName={webDevRepos[2][0].name}
+								repoDescription={webDevRepos[2][0].description}
+								languages={webDevRepos[2][0].language}
+								repoURL={webDevRepos[2][0].html_url}
+								hostingURL={webDevRepos[2][0].homepage}
+							/>
+							<CardProject
+								repoName={webDevRepos[3][0].name}
+								repoDescription={webDevRepos[3][0].description}
+								languages={webDevRepos[3][0].language}
+								repoURL={webDevRepos[3][0].html_url}
+								hostingURL={webDevRepos[3][0].homepage}
+							/>
+							<CardProject
+								repoName={webDevRepos[4][0].name}
+								repoDescription={webDevRepos[4][0].description}
+								languages={webDevRepos[4][0].language}
+								repoURL={webDevRepos[4][0].html_url}
+								hostingURL={webDevRepos[4][0].homepage}
+							/>
 						</Card>
 					</AccordionContent>
 				</AccordionItem>
 				<AccordionItem value="item-2">
 					<AccordionTrigger className="ml-4 text-[1.05rem]">Mobile App Development</AccordionTrigger>
 					<AccordionContent>
-						<Card className="flex flex-wrap max-[703px]:justify-center justify-between gap-2">
-							<ProjectCard repo="job-portal" alt="todo-list" />
-							{/* <ProjectCard repo="todo-list" alt="todo-list" />
-							<ProjectCard repo="todo-list" alt="todo-list" /> */}
-						</Card>
-					</AccordionContent>
-				</AccordionItem>
-				{/* <AccordionItem value="item-3">
-					<AccordionTrigger>Blockchain App Development</AccordionTrigger>
-					<AccordionContent>
-						<Card className="flex flex-wrap justify-center gap-4 md:gap-4 md:gap-x-3 lg-gap-2 lg-gap-x-8 xl:gap-2 xl:gap-x-20 2xl:gap-2 2xl:gap-x-16">
-				{/* <ProjectCard repo="todo-list" alt="todo-list" />
-							<ProjectCard repo="todo-list" alt="todo-list" />
-							<ProjectCard repo="todo-list" alt="todo-list" />
-						</Card>
-					</AccordionContent> */}
-				{/* </AccordionItem> */}
-				<AccordionItem value="item-3">
-					<AccordionTrigger className="ml-4 text-[1.05rem]">Game Development</AccordionTrigger>
-					<AccordionContent>
-						<Card className="flex flex-wrap justify-center gap-4 md:gap-4 md:gap-x-3 lg-gap-2 lg-gap-x-8 xl:gap-2 xl:gap-x-20 2xl:gap-2 2xl:gap-x-16">
-							<ProjectCard repo="desert-runner" alt="desert-runner" />
-							<ProjectCard repo="gold-rush" alt="gold-rush" />
-							{/* <ProjectCard repo="todo-list" alt="todo-list" /> */}
+						<Card className="flex flex-wrap justify-around gap-2 p-3">
+							<CardProject
+								repoName={appDevRepos[0][0].name}
+								repoDescription={appDevRepos[0][0].description}
+								languages={appDevRepos[0][0].language}
+								repoURL={appDevRepos[0][0].html_url}
+								hostingURL={appDevRepos[0][0].homepage}
+							/>
+							<CardProject
+								repoName={appDevRepos[1][0].name}
+								repoDescription={appDevRepos[1][0].description}
+								languages={appDevRepos[1][0].language}
+								repoURL={appDevRepos[1][0].html_url}
+								hostingURL={appDevRepos[1][0].homepage}
+							/>
+							<CardProject
+								repoName={appDevRepos[2][0].name}
+								repoDescription={appDevRepos[2][0].description}
+								languages={appDevRepos[2][0].language}
+								repoURL={appDevRepos[2][0].html_url}
+								hostingURL={appDevRepos[2][0].homepage}
+							/>
 						</Card>
 					</AccordionContent>
 				</AccordionItem>

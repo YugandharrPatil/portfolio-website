@@ -16,7 +16,7 @@ export default function Skills() {
 		webdev: {
 			heading: "Full-Stack Web Development",
 			content:
-				"I've been developing websites for the past 3 years. I mainly work with NodeJS and am experienced in frameworks like Next, React, Express, Tailwind & Prisma. I've done client work for more than 10 clients up until now. I'm open for client work for developing websites, so feel free to hit me up! Kindly check my projects below.",
+				"I've been developing full-stack websites for the past 3 years. I mainly work with NodeJS and am experienced in NextJS, ReactJS, Express, Prisma and Javascript & TypeScript. I've done client work for more than 10 clients up until now. I'm open for client work for developing websites whatever the need be, so feel free to get in touch! Checkout my projects below.",
 		},
 		appdev: {
 			heading: "Mobile App Development",
@@ -36,7 +36,7 @@ export default function Skills() {
 		devops: {
 			heading: "DevOps",
 			content:
-				"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis quibusdam deleniti doloremque sit provident quas natus cum quis similique laborum veritatis unde, odio accusantium nihil. Quae delectus ab nisi veritatis.",
+				"I've worked with CI/CD pipelines, Github Actions & Docker. I am well-versed with computer networking, SQL and databases. Open to work for DevOps/Architecture related projects!",
 		},
 		cybersec: {
 			heading: "Cybersecurity",
@@ -73,20 +73,20 @@ export default function Skills() {
 						darkIcon="/blockchaindevdark.png"
 						skill="Blockchain App Dev"
 					/> */}
-					<SkillCard
+					{/* <SkillCard
 						altText="gamedev"
 						setDescription={() => setSkillDescription(data.gamedev)}
 						lightIcon="/gamedevlight.png"
 						darkIcon="/gamedevdark.png"
 						skill="Game Dev"
-					/>
-					{/* <SkillCard
+					/> */}
+					<SkillCard
 						altText="devops"
 						setDescription={() => setSkillDescription(data.devops)}
 						lightIcon="/devopslight.png"
 						darkIcon="/devopsdark.png"
 						skill="DevOps"
-					/> */}
+					/>
 					{/* <SkillCard
 						altText="cybersec"
 						setDescription={() => setSkillDescription(data.cybersec)}
