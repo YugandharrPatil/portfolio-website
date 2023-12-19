@@ -12,7 +12,7 @@ const fetchRepos = async () => {
 				auth: process.env.GITHUB_AUTH_TOKEN,
 			},
 		});
-		console.log(data);
+		// console.log(data);
 		return data;
 	} catch (err) {
 		console.error(err);
@@ -25,14 +25,12 @@ export default async function Projects() {
 	let webDevRepos: any = [];
 	webDevRepos.push(repos.filter((repo: any) => repo.name === "portfolio-website"));
 	webDevRepos.push(repos.filter((repo: any) => repo.name === "form-types"));
-	webDevRepos.push(repos.filter((repo: any) => repo.name === "gramhealth-website"));
+	webDevRepos.push(repos.filter((repo: any) => repo.name === "discord-frontend-clone"));
 	webDevRepos.push(repos.filter((repo: any) => repo.name === "free-electric-bicycles"));
 	webDevRepos.push(repos.filter((repo: any) => repo.name === "graux-website"));
 
 	let appDevRepos: any = [];
 	appDevRepos.push(repos.filter((repo: any) => repo.name === "job-portal"));
-	appDevRepos.push(repos.filter((repo: any) => repo.name === "form-types"));
-	appDevRepos.push(repos.filter((repo: any) => repo.name === "gramhealth-website"));
 
 	return (
 		<>
@@ -91,20 +89,6 @@ export default async function Projects() {
 								languages={appDevRepos[0][0].language}
 								repoURL={appDevRepos[0][0].html_url}
 								hostingURL={appDevRepos[0][0].homepage}
-							/>
-							<CardProject
-								repoName={appDevRepos[1][0].name}
-								repoDescription={appDevRepos[1][0].description}
-								languages={appDevRepos[1][0].language}
-								repoURL={appDevRepos[1][0].html_url}
-								hostingURL={appDevRepos[1][0].homepage}
-							/>
-							<CardProject
-								repoName={appDevRepos[2][0].name}
-								repoDescription={appDevRepos[2][0].description}
-								languages={appDevRepos[2][0].language}
-								repoURL={appDevRepos[2][0].html_url}
-								hostingURL={appDevRepos[2][0].homepage}
 							/>
 						</Card>
 					</AccordionContent>
