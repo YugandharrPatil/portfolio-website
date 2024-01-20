@@ -99,7 +99,7 @@ export default async function Projects() {
           repoDescription={webDevRepos[5][0].description}
           languages={webDevRepos[5][0].language}
           repoURL={webDevRepos[5][0].html_url}
-          hostingURL={webDevRepos[5][0].homepage}
+          // hostingURL={webDevRepos[5][0].homepage}
         />
       </Card>
     </main>

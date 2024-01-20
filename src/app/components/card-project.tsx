@@ -32,7 +32,6 @@ export default function CardProject({
           <BookMarked className="mr-2 inline h-5 w-5 text-green-700" />
           {repoName}
         </h3>
-
         <p className="text-lg">{repoDescription}</p>
         <small className="text-md mt-2 font-semibold text-blue-500">
           {languages}
@@ -45,9 +44,11 @@ export default function CardProject({
             </Link>
           </Button>
           <Button asChild variant="outline" className="text-md">
-            <Link target="_blank" href={repoURL as string}>
-              Website
-            </Link>
+            {
+              <Link target="_blank" href={(hostingURL as string) || ""}>
+                Website
+              </Link>
+            }
           </Button>
           {/* <Link
             target="_blank"
