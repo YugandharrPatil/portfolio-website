@@ -36,81 +36,82 @@ export default function Navbar() {
         {/* ${
           theme === "light" ? "bg-white" : "bg-dark"
         } */}
-        {/* <div className="container flex h-full w-full items-center justify-between"> */}
-        <div className="container my-auto flex h-16 w-full gap-4">
+        <div className="container relative flex h-full w-full items-center justify-between">
           {/* LOGO */}
-          <div className="my-auto w-1/3">
+          <div>
             <Link href="#">
               <h1
-                className={`logo font-poppins text-3xl font-bold hover:text-neutral-500`}
+                className={`font-poppins text-3xl font-bold hover:text-neutral-500`}
               >
                 Yugz<span className="text-orange-500">.</span>
               </h1>
             </Link>
           </div>
-          {/* NAV ITEMS */}
+
+          {/* NAV BUTTONS */}
           {/* <div className="mx-auto flex w-fit"> */}
-          <div className="m-auto flex w-1/3">
-            {/* DESKTOP NAVBAR */}
-            <div className="mx-auto hidden lg:block">
-              <NavItem navText="Home" target="#" variant="ghost" />
-              <NavItem navText="About" target="#about" variant="ghost" />
-              {/* <NavItem navText="Skills" target="#skills" /> */}
-              <NavItem navText="Projects" target="#projects" variant="ghost" />
-              <NavItem
-                newTab={true}
-                navText="My Blog"
-                variant="ghost"
-                target="https://blog.yugandharr.com"
-              />
-            </div>
-            {/* MOBILE NAVBAR */}
-            <div className="dropdown lg:hidden">
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" size="icon">
-                    <Menu className="h-[1.2rem] w-[1.2rem]" />
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-32">
-                  <DropdownMenuItem asChild>
-                    <span className="w-full bg-background">
-                      <HelpCircle className="mr-2 inline h-4 w-4" />
-                      <Link href="#about">about</Link>
-                    </span>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <span className="w-full bg-background">
-                      <Bone className="mr-2 inline h-4 w-4" />
-                      <Link href="#skills">skills</Link>
-                    </span>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <span className="bg-background">
-                      <Layout className="mr-2 inline h-4 w-4" />
-                      <Link href="#projects">projects</Link>
-                    </span>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <span className="bg-background">
-                      <Send className="mr-2 inline h-4 w-4" />
-                      <Link href="#contact">contact me</Link>
-                    </span>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <span className="bg-background">
-                      <Pencil className="mr-2 inline h-4 w-4" />
-                      <Link href="https://blog.yugandharr.com" target="_blank">
-                        my blog <ExternalLink className="inline h-4 w-4" />
-                      </Link>
-                    </span>
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
-            </div>
+          {/* DESKTOP NAVBAR */}
+          <div className="absolute left-1/2 hidden -translate-x-1/2 transform lg:block">
+            {/* buttons flex automatically since they're inline elements */}
+            <NavItem navText="Home" target="#" variant="ghost" />
+            <NavItem navText="About" target="#" variant="ghost" />
+            <NavItem navText="Skills" target="#" variant="ghost" />
+            <NavItem navText="Projects" target="#" variant="ghost" />
+            <NavItem
+              newTab
+              navText="Blog"
+              variant="ghost"
+              target="https://yugz.hashnode.dev"
+            />
           </div>
-          <div className="my-auto flex w-1/3 justify-end gap-4">
-            <NavItem navText="Contact Me" target="#contact" variant="outline" />
+
+          {/* MOBILE NAVBAR */}
+          <div className={`flex gap-2 lg:hidden ${poppins.variable}`}>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" size="icon">
+                  <Menu className="h-[1.2rem] w-[1.2rem]" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-32">
+                <DropdownMenuItem asChild>
+                  <span className="w-full bg-background font-poppins">
+                    <HelpCircle className="mr-2 inline h-4 w-4" />
+                    <Link href="#">About</Link>
+                  </span>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <span className="w-full bg-background font-poppins">
+                    <Bone className="mr-2 inline h-4 w-4" />
+                    <Link href="#">Skills</Link>
+                  </span>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <span className="bg-background font-poppins">
+                    <Layout className="mr-2 inline h-4 w-4" />
+                    <Link href="#">Projects</Link>
+                  </span>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <span className="bg-background font-poppins">
+                    <Pencil className="mr-2 inline h-4 w-4" />
+                    <Link href="https://blog.yugandharr.com" target="_blank">
+                      Blog <ExternalLink className="inline h-4 w-4" />
+                    </Link>
+                  </span>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <span className="bg-background">
+                    <Send className="mr-2 inline h-4 w-4" />
+                    <Link href="#">Let&apos;s Chat</Link>
+                  </span>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+            <ThemeToggle />
+          </div>
+          <div className="flex gap-2 max-lg:hidden">
+            <NavItem navText="Let's Chat" bold target="#" variant="outline" />
             <ThemeToggle />
           </div>
         </div>

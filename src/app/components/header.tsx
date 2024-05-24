@@ -2,6 +2,7 @@ import { Kumar_One, Playfair_Display, Source_Code_Pro } from "next/font/google";
 import Image from "next/image";
 import flag from "../../../public/flag.png";
 import profilePic from "../../../public/pic.jpeg";
+import Footer from "./footer";
 
 const playfairDisplay = Playfair_Display({
   weight: ["900"],
@@ -43,13 +44,7 @@ export default function Header() {
           >
             Full-Stack Developer | Designer | Blogger
           </h3>
-          <br />
-          {/* <p
-            className={`${kumarOne.className} text-lg tracking-wider max-xl:my-2`}
-          >
-            Creating beautiful & engaging digital experiences from India
-            <Image className="inline h-7 w-7" src={flag} alt="Indian flag" />
-          </p> */}
+          <Footer />
         </div>
         <div className="order-first xl:order-last xl:w-1/2">
           <Image

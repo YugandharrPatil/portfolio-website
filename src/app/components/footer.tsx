@@ -7,12 +7,9 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useTheme } from "next-themes";
 import Link from "next/link";
 
 export default function Footer() {
-  let { theme } = useTheme();
-
   return (
     <>
       <footer className="h-20 border border-t border-gray-800">
