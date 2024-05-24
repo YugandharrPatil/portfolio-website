@@ -44,12 +44,12 @@ export default function Header() {
             Full-Stack Developer | Designer | Blogger
           </h3>
           <br />
-          <p
+          {/* <p
             className={`${kumarOne.className} text-lg tracking-wider max-xl:my-2`}
           >
             Creating beautiful & engaging digital experiences from India
             <Image className="inline h-7 w-7" src={flag} alt="Indian flag" />
-          </p>
+          </p> */}
         </div>
         <div className="order-first xl:order-last xl:w-1/2">
           <Image

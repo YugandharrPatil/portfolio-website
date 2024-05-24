@@ -11,12 +11,12 @@ export default async function HomePage() {
     <>
       <Navbar />
       <Header />
-      <Hr ID="skills" />
-      <Skills />
-      <Hr ID="projects" />
-      <Projects />
-      <Hr ID="contact" />
-      <ContactForm />
+      {/* <Hr ID="skills" /> */}
+      {/* <Skills /> */}
+      {/* <Hr ID="projects" /> */}
+      {/* <Projects /> */}
+      {/* <Hr ID="contact" /> */}
+      {/* <ContactForm /> */}
       <Footer />
     </>
   );

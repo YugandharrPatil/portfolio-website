@@ -1,5 +1,7 @@
-"use client";
+// FONTS
+import { poppins } from "@/utils/fonts";
 
+// UI
 import {
   Bone,
   ExternalLink,
@@ -9,11 +11,6 @@ import {
   Pencil,
   Send,
 } from "lucide-react";
-import { useTheme } from "next-themes";
-import { Stalemate } from "next/font/google";
-import Link from "next/link";
-import NavItem from "./nav-item";
-import ThemeToggle from "./theme-toggle";
 import { Button } from "./ui/button";
 import {
   DropdownMenu,
@@ -22,40 +19,48 @@ import {
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
 
-const stalemate = Stalemate({
-  weight: "400",
-  subsets: ["latin"],
-});
+// UTILS
+import Link from "next/link";
+import ThemeToggle from "./theme-toggle";
+
+// COMPONENTS
+import NavItem from "./nav-item";
 
 export default function Navbar() {
   return (
     <>
       <nav
-        className={`fixed z-50 h-24 w-full border-b border-gray-800 bg-background`}
+        // className={`fixed z-50 h-24 w-full border-b border-gray-800 bg-background ${poppins.variable}`}
+        className={`fixed z-50 flex h-24 w-full border-b border-gray-800 bg-background ${poppins.variable}`}
       >
         {/* ${
           theme === "light" ? "bg-white" : "bg-dark"
         } */}
-        <div className="container flex h-full w-full items-center justify-between">
-          <div className="">
+        {/* <div className="container flex h-full w-full items-center justify-between"> */}
+        <div className="container my-auto flex h-16 w-full gap-4">
+          {/* LOGO */}
+          <div className="my-auto w-1/3">
             <Link href="#">
               <h1
-                className={`logo text-5xl ${stalemate.className} hover:text-neutral-500`}
+                className={`logo font-poppins text-3xl font-bold hover:text-neutral-500`}
               >
-                Yugandhar
+                Yugz<span className="text-orange-500">.</span>
               </h1>
             </Link>
           </div>
-          <div className="flex gap-4">
+          {/* NAV ITEMS */}
+          {/* <div className="mx-auto flex w-fit"> */}
+          <div className="m-auto flex w-1/3">
             {/* DESKTOP NAVBAR */}
-            <div className="hidden lg:block">
-              <NavItem navText="about" target="#about" />
-              <NavItem navText="skills" target="#skills" />
-              <NavItem navText="projects" target="#projects" />
-              <NavItem navText="contact me" target="#contact" />
+            <div className="mx-auto hidden lg:block">
+              <NavItem navText="Home" target="#" variant="ghost" />
+              <NavItem navText="About" target="#about" variant="ghost" />
+              {/* <NavItem navText="Skills" target="#skills" /> */}
+              <NavItem navText="Projects" target="#projects" variant="ghost" />
               <NavItem
                 newTab={true}
-                navText="my blog"
+                navText="My Blog"
+                variant="ghost"
                 target="https://blog.yugandharr.com"
               />
             </div>
@@ -103,6 +108,9 @@ export default function Navbar() {
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>
+          </div>
+          <div className="my-auto flex w-1/3 justify-end gap-4">
+            <NavItem navText="Contact Me" target="#contact" variant="outline" />
             <ThemeToggle />
           </div>
         </div>

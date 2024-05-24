@@ -1,28 +1,25 @@
+import { poppins } from "@/utils/fonts";
 import { ExternalLink } from "lucide-react";
-import { Lato } from "next/font/google";
 import Link from "next/link";
 import { Button } from "./ui/button";
-
-const lato = Lato({
-  weight: "400",
-  subsets: ["latin"],
-});
 
 export default function NavItem({
   navText,
   target,
   newTab,
+  variant,
 }: {
   navText: string;
   target: string;
   newTab?: boolean;
+  variant: "ghost" | "outline";
 }) {
   return (
     <>
       <Button
         asChild
-        variant="ghost"
-        className={`mr-4 text-xl tracking-wide ${lato.className}`}
+        variant={variant}
+        className={`mx-1 text-base tracking-wide ${poppins.variable} font-poppins`}
       >
         <Link href={target} target={newTab ? "_black" : ""}>
           {navText}
