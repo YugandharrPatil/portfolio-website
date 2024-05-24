@@ -1,10 +1,10 @@
 import ContactForm from "./components/contact-form";
-import Footer from "./components/footer";
 import Header from "./components/header";
 import Hr from "./components/hr";
 import Navbar from "./components/navbar";
 import Projects from "./components/projects";
 import Skills from "./components/skills";
+import Footer from "./components/social-icons";
 
 export default async function HomePage() {
   return (
@@ -17,7 +17,7 @@ export default async function HomePage() {
       {/* <Projects /> */}
       {/* <Hr ID="contact" /> */}
       {/* <ContactForm /> */}
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

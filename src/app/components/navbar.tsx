@@ -31,7 +31,7 @@ export default function Navbar() {
     <>
       <nav
         // className={`fixed z-50 h-24 w-full border-b border-gray-800 bg-background ${poppins.variable}`}
-        className={`fixed z-50 flex h-24 w-full border-b border-gray-800 bg-background ${poppins.variable}`}
+        className={`fixed top-0 z-50 flex h-24 w-full border-b border-gray-800 bg-background ${poppins.variable}`}
       >
         {/* ${
           theme === "light" ? "bg-white" : "bg-dark"

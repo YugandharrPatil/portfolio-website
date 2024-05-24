@@ -1,61 +1,49 @@
-import { Kumar_One, Playfair_Display, Source_Code_Pro } from "next/font/google";
+import { playfairDisplay, sourceCodePro } from "@/utils/fonts";
 import Image from "next/image";
-import flag from "../../../public/flag.png";
+// import flag from "../../../public/flag.png";
 import profilePic from "../../../public/pic.jpeg";
-import Footer from "./footer";
-
-const playfairDisplay = Playfair_Display({
-  weight: ["900"],
-  subsets: ["latin"],
-});
-
-const sourceCodePro = Source_Code_Pro({
-  weight: "500",
-  subsets: ["latin"],
-});
-
-const kumarOne = Kumar_One({
-  weight: "400",
-  subsets: ["latin"],
-});
+import SocialIcons from "./social-icons";
 
 export default function Header() {
   return (
-    <>
-      <main
-        id="about"
-        className="container flex flex-row justify-between bg-background pb-4 pt-32 max-xl:flex-col xl:h-screen"
-      >
-        <div className="order-first max-xl:order-last max-xl:text-center xl:w-1/2 xl:self-center">
-          <h1
-            className={`text-5xl font-black leading-tight tracking-normal max-xl:my-10 sm:text-7xl xl:text-8xl ${playfairDisplay.className}`}
-          >
-            Hi, <br />
-            I&apos;m <span> </span>
-            <span className="tracking-wide">
-              <span className="z-10 text-[#67e8f9] drop-shadow-[-6px_0px_#e11d48]">
-                Y
-              </span>
-              ugandhar
+    <main
+      id="about"
+      className="container mt-32 flex flex-col items-center justify-center bg-background xl:flex-row"
+    >
+      {/* TEXT SECTION */}
+      <div className="order-last text-center xl:order-first xl:w-1/2 xl:text-left">
+        <h1
+          className={`text-5xl font-black leading-tight tracking-normal max-xl:my-10 sm:text-7xl xl:text-8xl ${playfairDisplay.variable} font-playfairDisplay`}
+        >
+          Hi! I&apos;m <br />
+          <span className="tracking-wide">
+            <span className="z-10 text-[#67e8f9] drop-shadow-[-6px_0px_#e11d48]">
+              Y
             </span>
-          </h1>
-          <h3
-            className={`${sourceCodePro.className} mt-5 text-2xl text-gray-600 lg:mt-8`}
-          >
-            Full-Stack Developer | Designer | Blogger
-          </h3>
-          <Footer />
-        </div>
-        <div className="order-first xl:order-last xl:w-1/2">
+            ugandhar
+          </span>
+        </h1>
+        <h3
+          className={`${sourceCodePro.className} mt-5 text-2xl font-medium text-gray-600 lg:mt-8`}
+        >
+          Indie Hacker | Developer | Tinkerer
+        </h3>
+        <SocialIcons />
+      </div>
+      {/* IMAGE */}
+      <div className="order-first w-5/6 sm:w-2/3 lg:w-1/2 xl:order-last">
+        <div className="ImageContainer relative mx-auto aspect-[3/4] h-full xl:w-3/4">
           <Image
-            className="w-full max-xl:mx-auto sm:h-[40rem] sm:w-auto xl:ms-auto 2xl:h-full"
+            className="object-cover"
+            quality={100}
+            placeholder="blur"
+            // w-full max-xl:mx-auto sm:h-[40rem] sm:w-auto xl:ms-auto 2xl:h-full
             src={profilePic}
-            // width={1000}
-            // height="0"
+            fill
             alt="profile"
           />
         </div>
-      </main>
-    </>
+      </div>
+    </main>
   );
 }

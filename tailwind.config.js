@@ -19,6 +19,8 @@ module.exports = {
     extend: {
       fontFamily: {
         poppins: ["var(--font-poppins)"],
+        playfairDisplay: ["var(--font-playfairDisplay)"],
+        sourceCodePro: ["var(--font-sourceCodePro)"],
       },
       keyframes: {
         "accordion-down": {
