@@ -54,9 +54,9 @@ export default function Navbar() {
           <div className="absolute left-1/2 hidden -translate-x-1/2 transform lg:block">
             {/* buttons flex automatically since they're inline elements */}
             <NavItem navText="Home" target="#" variant="ghost" />
-            <NavItem navText="About" target="#" variant="ghost" />
-            <NavItem navText="Skills" target="#" variant="ghost" />
-            <NavItem navText="Projects" target="#" variant="ghost" />
+            <NavItem navText="About" target="#about" variant="ghost" />
+            <NavItem navText="Skills" target="#skills" variant="ghost" />
+            <NavItem navText="Projects" target="/projects" variant="ghost" />
             <NavItem
               newTab
               navText="Blog"
@@ -111,7 +111,12 @@ export default function Navbar() {
             <ThemeToggle />
           </div>
           <div className="flex gap-2 max-lg:hidden">
-            <NavItem navText="Let's Chat" bold target="#" variant="outline" />
+            <NavItem
+              navText="Let's Chat"
+              bold
+              target="#contact"
+              variant="outline"
+            />
             <ThemeToggle />
           </div>
         </div>

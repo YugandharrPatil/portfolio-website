@@ -57,3 +57,7 @@
     @apply bg-background text-foreground;
   }
 }
+
+.skillsHeading {
+  @apply my-4 text-lg font-semibold sm:text-xl;
+}

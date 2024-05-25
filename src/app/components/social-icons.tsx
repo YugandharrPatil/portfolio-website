@@ -17,7 +17,7 @@ export default function SocialIcons() {
       >
         <FontAwesomeIcon
           icon={faTwitter}
-          className="mx-2 text-3xl hover:text-[#1DA1F2]"
+          className="mx-2 text-3xl transition duration-300 ease-in-out hover:text-[#1DA1F2]"
         />
       </Link>
       <Link
@@ -27,7 +27,7 @@ export default function SocialIcons() {
       >
         <FontAwesomeIcon
           icon={faInstagram}
-          className="mx-2 text-3xl hover:text-[#C13584]"
+          className="mx-2 text-3xl transition duration-300 ease-in-out hover:text-[#C13584]"
         />
       </Link>
       <Link
@@ -37,13 +37,13 @@ export default function SocialIcons() {
       >
         <FontAwesomeIcon
           icon={faGithub}
-          className="mx-2 text-3xl hover:text-[#6e5494]"
+          className="mx-2 text-3xl transition duration-300 ease-in-out hover:text-[#5D6BC1]"
         />
       </Link>
       <Link className="block" href="mailto:yugandharrpatil@gmail.com">
         <FontAwesomeIcon
           icon={faEnvelope}
-          className="mx-2 text-3xl hover:text-[#94a3b8]"
+          className="mx-2 text-3xl transition duration-300 ease-in-out hover:text-[#94a3b8]"
         />
       </Link>
     </div>

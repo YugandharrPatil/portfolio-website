@@ -30,7 +30,7 @@ export default function ContactForm() {
   } = useForm();
 
   const onSubmit = async (data: any) => {
-    await addMessage(data);
+    // await addMessage(data);
 
     reset();
   };

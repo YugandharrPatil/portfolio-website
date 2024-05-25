@@ -1,7 +1,7 @@
 import { playfairDisplay, sourceCodePro } from "@/utils/fonts";
 import Image from "next/image";
 // import flag from "../../../public/flag.png";
-import profilePic from "../../../public/pic.jpeg";
+import profilePic from "../../../public/images/profile/pic.jpeg";
 import SocialIcons from "./social-icons";
 
 export default function Header() {
