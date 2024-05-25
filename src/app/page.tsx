@@ -18,8 +18,8 @@ export default async function HomePage() {
       <Skills />
       <Hr ID="projects" />
       <Projects />
-      <Hr ID="contact" />
-      <ContactForm />
+      {/* <Hr ID="contact" />
+      <ContactForm /> */}
       <Footer />
     </>
   );
