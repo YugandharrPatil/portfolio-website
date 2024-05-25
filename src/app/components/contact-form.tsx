@@ -1,5 +1,4 @@
 "use client";
-import Heading from "./heading";
 // ui components
 import { Button } from "@/app/components/ui/button";
 import {
@@ -21,6 +20,10 @@ import { useForm } from "react-hook-form";
 
 // import addMessage from "../actions/form-action";
 
+// FIREBASE
+import { firestore } from "@/lib/utils/firebase/config";
+import { addDoc, collection, Timestamp } from "firebase/firestore/lite";
+
 export default function ContactForm() {
   const {
     register,
@@ -30,15 +33,26 @@ export default function ContactForm() {
   } = useForm();
 
   const onSubmit = async (data: any) => {
-    // await addMessage(data);
+    console.log(data);
+    try {
+      await addDoc(collection(firestore, "messages"), {
+        data,
+        sentAt: Timestamp.now().toDate(),
+      });
+    } catch (err) {
+      console.error(err);
+    } finally {
+      reset();
+    }
 
     reset();
   };
 
   return (
     <main className="container">
-      <Heading heading="Connect with Me!" />
-      <Card className="w-w-11/12 mx-auto mb-10 sm:w-9/12 xl:w-5/12 2xl:w-5/12">
+      <h1 className="heading">Connect with Me!</h1>
+      <Card className="mx-auto mb-10 max-w-lg">
+        {/*  sm:w-9/12 xl:w-5/12 2xl:w-5/12 */}
         <CardHeader className="text-center">
           <CardTitle className="text-2xl">Write me a message!</CardTitle>
           <CardDescription>
@@ -67,6 +81,11 @@ export default function ContactForm() {
                 <Input
                   {...register("email", {
                     required: "Please enter your email",
+                    validate: {
+                      matchPattern: (v) =>
+                        /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) ||
+                        "Email address must be a valid address",
+                    },
                   })}
                   placeholder="Please enter your email"
                   type="email"
@@ -107,6 +126,11 @@ export default function ContactForm() {
               {isSubmitting ? "Submitting" : "Send Message"}
             </Button>
           </CardFooter>
+          {isSubmitSuccessful && (
+            <p className="mb-3 text-center text-green-500">
+              Submitted Successfully
+            </p>
+          )}
         </form>
       </Card>
     </main>

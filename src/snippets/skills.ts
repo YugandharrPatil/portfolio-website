@@ -109,16 +109,16 @@ import Postman from "../../public/images/misc/postman.png";
 export const languages = [
   { id: 1, imageSrc: C, tooltip: "C" },
   { id: 2, imageSrc: Cpp, tooltip: "C++" },
-  { id: 4, imageSrc: JS, tooltip: "JavaScript" },
-  { id: 5, imageSrc: TS, tooltip: "TypeScript" },
-  { id: 3, imageSrc: CSharp, tooltip: "C#" },
+  { id: 3, imageSrc: JS, tooltip: "JavaScript" },
+  { id: 4, imageSrc: TS, tooltip: "TypeScript" },
+  { id: 5, imageSrc: CSharp, tooltip: "C#" },
   { id: 6, imageSrc: Go, tooltip: "Go" },
   { id: 7, imageSrc: Python, tooltip: "Python" },
 ];
 
 export const devOps = [
   { id: 1, imageSrc: Docker, tooltip: "Docker" },
-  { id: 2, imageSrc: DigitalOcean, tooltip: "DigitalOcean" },
+  { id: 2, imageSrc: DigitalOcean, tooltip: "Digital Ocean" },
   { id: 3, imageSrc: Linode, tooltip: "Linode" },
   { id: 4, imageSrc: AWS, tooltip: "AWS" },
   { id: 5, imageSrc: Vercel, tooltip: "Vercel" },
@@ -132,21 +132,21 @@ export const webDev = [
   { id: 2, imageSrc: React, tooltip: "React" },
   { id: 3, imageSrc: Next, tooltip: "Next" },
   { id: 4, imageSrc: TailwindCSS, tooltip: "TailwindCSS" },
-  { id: 8, imageSrc: Prisma, tooltip: "Prisma" },
-  { id: 5, imageSrc: Drizzle, tooltip: "Drizzle" },
-  { id: 6, imageSrc: MongoDB, tooltip: "MongoDB" },
+  { id: 5, imageSrc: Prisma, tooltip: "Prisma" },
+  { id: 6, imageSrc: Drizzle, tooltip: "DrizzleORM" },
+  { id: 7, imageSrc: MongoDB, tooltip: "MongoDB" },
   // { id: 7, imageSrc: Turso, tooltip: "Turso" },
 ];
 
 export const misc = [
-  { id: 15, imageSrc: Git, tooltip: "Git" },
-  { id: 16, imageSrc: GitHub, tooltip: "Github" },
-  { id: 16, imageSrc: Postman, tooltip: "Postman" },
+  { id: 1, imageSrc: Git, tooltip: "Git" },
+  { id: 2, imageSrc: GitHub, tooltip: "Github" },
+  { id: 3, imageSrc: Postman, tooltip: "Postman" },
 ];
 
 export const gameDev = [
-  { id: 17, imageSrc: Unity, tooltip: "Unity" },
-  { id: 18, imageSrc: Blender, tooltip: "Blender" },
-  { id: 18, imageSrc: DirectX11, tooltip: "DirectX" },
-  { id: 18, imageSrc: SDL, tooltip: "SDL" },
+  { id: 1, imageSrc: Unity, tooltip: "Unity Engine" },
+  { id: 2, imageSrc: Blender, tooltip: "Blender" },
+  { id: 3, imageSrc: DirectX11, tooltip: "DirectX" },
+  { id: 4, imageSrc: SDL, tooltip: "SDL" },
 ];

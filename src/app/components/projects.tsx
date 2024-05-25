@@ -1,35 +1,29 @@
 import fetchRepos from "@/lib/utils/calls";
 import Link from "next/link";
-import Heading from "./heading";
 import ProjectCard from "./project-card";
-import { Button } from "./ui/button";
 import { Card } from "./ui/card";
+
+const REPOS = [
+  "openai-api",
+  "blockchain-from-scratch",
+  "gramhealth-demo",
+  "lettering-by-muskan",
+  "desert-runner",
+  "gold-rush",
+  "weather",
+];
 
 export default async function Projects() {
   const fetchedRepos = await fetchRepos();
   let repos: any = [];
-  repos.push(
-    fetchedRepos.filter((repo: any) => repo.name === "lettering-by-muskan"),
+  REPOS.forEach((thisRepo) =>
+    repos.push(fetchedRepos.filter((repo: any) => repo.name === thisRepo)),
   );
-  repos.push(
-    fetchedRepos.filter((repo: any) => repo.name === "free-electric-bicycles"),
-  );
-  repos.push(fetchedRepos.filter((repo: any) => repo.name === "graux-website"));
-  // repos.push(
-  //   fetchedRepos.filter((repo: any) => repo.name === "whatsapp-clone"),
-  // );
-  repos.push(fetchedRepos.filter((repo: any) => repo.name === "weather"));
-  repos.push(fetchedRepos.filter((repo: any) => repo.name === "job-portal"));
-  repos.push(
-    fetchedRepos.filter((repo: any) => repo.name === "gramhealth-demo"),
-    fetchedRepos.filter((repo: any) => repo.name === "desert-runner"),
-  );
-  // fetchedRepos.forEach((repo: any) => console.log(repo.name));
 
   return (
-    <main className="container">
-      <Heading heading="Projects" />
-      <Card className="relative flex w-fit flex-wrap justify-center gap-4 p-4">
+    <main className="container relative">
+      <h1 className="heading">Projects</h1>
+      <div className="flex w-fit flex-wrap justify-center gap-4 p-4">
         {repos.map((repo: any, id: number) => (
           <ProjectCard
             key={repo.id}
@@ -40,10 +34,12 @@ export default async function Projects() {
             hostingURL={repos[`${id}`][0].homepage}
           />
         ))}
-        <Button asChild className="absolute bottom-4 right-4">
-          <Link href="/projects">See More...</Link>
-        </Button>
-      </Card>
+        <Link href="/projects" className="self-end">
+          <Card className="flex w-72 cursor-pointer items-center justify-center p-3 text-xl font-bold hover:bg-neutral-100 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-50">
+            See More...
+          </Card>
+        </Link>
+      </div>
     </main>
   );
 }

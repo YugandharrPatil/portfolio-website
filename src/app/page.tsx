@@ -2,7 +2,6 @@ import About from "./components/about";
 import ContactForm from "./components/contact-form";
 import Footer from "./components/footer";
 import Header from "./components/header";
-import Hr from "./components/hr";
 import Navbar from "./components/navbar";
 import Projects from "./components/projects";
 import Skills from "./components/skills";
@@ -12,14 +11,14 @@ export default async function HomePage() {
     <>
       <Navbar />
       <Header />
-      <Hr ID="about" />
+      <hr id="about" className="hr" />
       <About />
-      <Hr ID="skills" />
+      <hr id="skills" className="hr" />
       <Skills />
-      <Hr ID="projects" />
+      <hr id="projects" className="hr" />
       <Projects />
-      {/* <Hr ID="contact" />
-      <ContactForm /> */}
+      <hr id="contact" className="hr" />
+      <ContactForm />
       <Footer />
     </>
   );

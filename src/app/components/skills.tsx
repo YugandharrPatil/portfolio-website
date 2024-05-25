@@ -1,21 +1,16 @@
 "use client";
 import { devOps, gameDev, languages, misc, webDev } from "@/snippets/skills";
-import { useTheme } from "next-themes";
-import Image from "next/image";
 import Card from "./card";
-import Heading from "./heading";
 import ImageIcon from "./image-icon";
 
 export default function Skills() {
-  // const { theme } = useTheme();
-
   return (
     <main className="container">
-      <Heading heading="Skills" />
+      <h1 className="heading">Skills</h1>
       <div className="flex flex-wrap justify-center gap-4">
         <Card>
           <h1 className="skillsHeading">Languages</h1>
-          <div className="flex gap-5">
+          <div className="skillsContainer">
             {languages.map((language) => (
               <ImageIcon
                 key={language.id}
@@ -28,7 +23,7 @@ export default function Skills() {
 
         <Card>
           <h1 className="skillsHeading">Architecture</h1>
-          <div className="flex gap-5">
+          <div className="skillsContainer">
             {devOps.map((devOps) => (
               <ImageIcon
                 key={devOps.id}
@@ -41,7 +36,7 @@ export default function Skills() {
 
         <Card>
           <h1 className="skillsHeading">Web Dev</h1>
-          <div className="flex gap-5">
+          <div className="skillsContainer">
             {webDev.map((tool) => (
               <ImageIcon
                 key={tool.id}
@@ -54,7 +49,7 @@ export default function Skills() {
 
         <Card>
           <h1 className="skillsHeading">Game Dev</h1>
-          <div className="flex gap-5">
+          <div className="skillsContainer">
             {gameDev.map((tool) => (
               <ImageIcon
                 key={tool.id}
@@ -67,7 +62,7 @@ export default function Skills() {
 
         <Card>
           <h1 className="skillsHeading">Misc</h1>
-          <div className="flex gap-5">
+          <div className="skillsContainer">
             {misc.map((tool) => (
               <ImageIcon
                 key={tool.id}

@@ -23,8 +23,7 @@ import {
 import Link from "next/link";
 import ThemeToggle from "./theme-toggle";
 
-// COMPONENTS
-import NavItem from "./nav-item";
+const BLOG_LINK = "https://yugz.hashnode.dev";
 
 export default function Navbar() {
   return (
@@ -51,9 +50,29 @@ export default function Navbar() {
           {/* NAV BUTTONS */}
           {/* <div className="mx-auto flex w-fit"> */}
           {/* DESKTOP NAVBAR */}
-          <div className="absolute left-1/2 hidden -translate-x-1/2 transform lg:block">
+          <div
+            className={`absolute left-1/2 hidden -translate-x-1/2 transform lg:block`}
+          >
             {/* buttons flex automatically since they're inline elements */}
-            <NavItem navText="Home" target="#" variant="ghost" />
+            <Button className={`navButton font-poppins`} variant="ghost">
+              <Link href="#">Home</Link>
+            </Button>
+            <Button className={`navButton font-poppins`} variant="ghost">
+              <Link href="#about">About</Link>
+            </Button>
+            <Button className={`navButton font-poppins`} variant="ghost">
+              <Link href="#skills">Skills</Link>
+            </Button>
+            <Button className={`navButton font-poppins`} variant="ghost">
+              <Link href="/projects">Projects</Link>
+            </Button>
+            <Button className={`navButton font-poppins`} variant="ghost">
+              <Link href={BLOG_LINK} target="_blank">
+                Blog
+              </Link>
+              <ExternalLink className="ms-1 inline h-5 w-5" />
+            </Button>
+            {/* <NavItem navText="Home" target="#" variant="ghost" />
             <NavItem navText="About" target="#about" variant="ghost" />
             <NavItem navText="Skills" target="#skills" variant="ghost" />
             <NavItem navText="Projects" target="/projects" variant="ghost" />
@@ -62,11 +81,11 @@ export default function Navbar() {
               navText="Blog"
               variant="ghost"
               target="https://yugz.hashnode.dev"
-            />
+            /> */}
           </div>
 
           {/* MOBILE NAVBAR */}
-          <div className={`flex gap-2 lg:hidden ${poppins.variable}`}>
+          <div className={`flex gap-2 lg:hidden`}>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" size="icon">
@@ -77,25 +96,25 @@ export default function Navbar() {
                 <DropdownMenuItem asChild>
                   <span className="w-full bg-background font-poppins">
                     <HelpCircle className="mr-2 inline h-4 w-4" />
-                    <Link href="#">About</Link>
+                    <Link href="#about">About</Link>
                   </span>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                   <span className="w-full bg-background font-poppins">
                     <Bone className="mr-2 inline h-4 w-4" />
-                    <Link href="#">Skills</Link>
+                    <Link href="#skills">Skills</Link>
                   </span>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                   <span className="bg-background font-poppins">
                     <Layout className="mr-2 inline h-4 w-4" />
-                    <Link href="#">Projects</Link>
+                    <Link href="/projects">Projects</Link>
                   </span>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                   <span className="bg-background font-poppins">
                     <Pencil className="mr-2 inline h-4 w-4" />
-                    <Link href="https://blog.yugandharr.com" target="_blank">
+                    <Link href={BLOG_LINK} target="_blank">
                       Blog <ExternalLink className="inline h-4 w-4" />
                     </Link>
                   </span>
@@ -103,7 +122,7 @@ export default function Navbar() {
                 <DropdownMenuItem asChild>
                   <span className="bg-background">
                     <Send className="mr-2 inline h-4 w-4" />
-                    <Link href="#">Let&apos;s Chat</Link>
+                    <Link href="#contact">Let&apos;s Chat</Link>
                   </span>
                 </DropdownMenuItem>
               </DropdownMenuContent>
@@ -111,12 +130,12 @@ export default function Navbar() {
             <ThemeToggle />
           </div>
           <div className="flex gap-2 max-lg:hidden">
-            <NavItem
-              navText="Let's Chat"
-              bold
-              target="#contact"
+            <Button
+              className="navButton font-poppins font-bold"
               variant="outline"
-            />
+            >
+              <Link href="#contact">Let&apos;s Chat</Link>
+            </Button>
             <ThemeToggle />
           </div>
         </div>

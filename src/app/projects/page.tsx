@@ -66,7 +66,6 @@ import fetchRepos from "@/lib/utils/calls";
 import { poppins } from "@/utils/fonts";
 import { ChevronLeft } from "lucide-react";
 import Link from "next/link";
-import NavItem from "../components/nav-item";
 import ProjectCard from "../components/project-card";
 import ThemeToggle from "../components/theme-toggle";
 import { Button } from "../components/ui/button";
@@ -78,35 +77,46 @@ import {
   TabsTrigger,
 } from "../components/ui/tabs";
 
+const WEBDEV_REPOS = [
+  "lettering-by-muskan",
+  "free-electric-bicycles",
+  "graux-website",
+  "form-types",
+  "whatsapp-clone",
+  "weather",
+  "job-portal",
+  "todo-list",
+  "drizzle-next-planetscale-starter-template",
+  "drizzle-next-turso-starter-template",
+  "discord-frontend-clone",
+];
+
+const GAMEDEV_REPOS = ["desert-runner", "gold-rush"];
+
+const BLOCKCHAIN_DEV_REPOS = ["blockchain-from-scratch"];
+
 export default async function ProjectsPage() {
   const fetchedRepos = await fetchRepos();
 
   let webDevRepos: any = [];
-  webDevRepos.push(
-    fetchedRepos.filter((repo: any) => repo.name === "lettering-by-muskan"),
-  );
-  webDevRepos.push(
-    fetchedRepos.filter((repo: any) => repo.name === "free-electric-bicycles"),
-  );
-  webDevRepos.push(
-    fetchedRepos.filter((repo: any) => repo.name === "graux-website"),
-  );
-  webDevRepos.push(
-    fetchedRepos.filter((repo: any) => repo.name === "whatsapp-clone"),
-  );
-  webDevRepos.push(fetchedRepos.filter((repo: any) => repo.name === "weather"));
-  webDevRepos.push(
-    fetchedRepos.filter((repo: any) => repo.name === "job-portal"),
+  WEBDEV_REPOS.forEach((thisRepo) =>
+    webDevRepos.push(
+      fetchedRepos.filter((repo: any) => repo.name === thisRepo),
+    ),
   );
 
   let gameDevRepos: any = [];
-  gameDevRepos.push(
-    fetchedRepos.filter((repo: any) => repo.name === "desert-runner"),
+  GAMEDEV_REPOS.forEach((thisRepo) =>
+    gameDevRepos.push(
+      fetchedRepos.filter((repo: any) => repo.name === thisRepo),
+    ),
   );
-  // fetchedRepos.forEach((repo: any) => console.log(repo.name));
+
   let blockchainDevRepos: any = [];
-  blockchainDevRepos.push(
-    fetchedRepos.filter((repo: any) => repo.name === "blockchain-from-scratch"),
+  BLOCKCHAIN_DEV_REPOS.forEach((thisRepo) =>
+    blockchainDevRepos.push(
+      fetchedRepos.filter((repo: any) => repo.name === thisRepo),
+    ),
   );
   return (
     <main className="container relative">
@@ -126,7 +136,7 @@ export default async function ProjectsPage() {
           <ThemeToggle />
         </div>
         <TabsContent value="webDev">
-          <Card className="mt-24 flex w-fit flex-wrap justify-center gap-4 p-4">
+          <div className="mt-24 flex w-fit flex-wrap justify-center gap-4 p-4">
             {webDevRepos.map((repo: any, id: number) => (
               <ProjectCard
                 key={repo.id}
@@ -137,10 +147,10 @@ export default async function ProjectsPage() {
                 hostingURL={webDevRepos[`${id}`][0].homepage}
               />
             ))}
-          </Card>
+          </div>
         </TabsContent>
         <TabsContent value="gameDev">
-          <Card className="mt-24 flex w-fit flex-wrap justify-center gap-4 p-4">
+          <div className="mt-24 flex w-fit flex-wrap justify-center gap-4 p-4">
             {gameDevRepos.map((repo: any, id: number) => (
               <ProjectCard
                 key={repo.id}
@@ -151,10 +161,10 @@ export default async function ProjectsPage() {
                 hostingURL={gameDevRepos[`${id}`][0].homepage}
               />
             ))}
-          </Card>
+          </div>
         </TabsContent>
         <TabsContent value="blockchainDev">
-          <Card className="mt-24 flex w-fit flex-wrap justify-center gap-4 p-4">
+          <div className="mt-24 flex w-fit flex-wrap justify-center gap-4 p-4">
             {blockchainDevRepos.map((repo: any, id: number) => (
               <ProjectCard
                 key={repo.id}
@@ -165,7 +175,7 @@ export default async function ProjectsPage() {
                 hostingURL={blockchainDevRepos[`${id}`][0].homepage}
               />
             ))}
-          </Card>
+          </div>
         </TabsContent>
       </Tabs>
     </main>

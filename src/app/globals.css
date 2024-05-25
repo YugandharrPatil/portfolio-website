@@ -61,3 +61,19 @@
 .skillsHeading {
   @apply my-4 text-lg font-semibold sm:text-xl;
 }
+
+.heading {
+  @apply mb-10 text-center text-3xl font-semibold;
+}
+
+.skillsContainer {
+  @apply flex gap-5 max-[500px]:gap-3;
+}
+
+.navButton {
+  @apply mx-1 text-base tracking-wide;
+}
+
+.hr {
+  @apply mx-auto my-24 block max-w-[10rem] border-t-8 border-dotted border-gray-600;
+}

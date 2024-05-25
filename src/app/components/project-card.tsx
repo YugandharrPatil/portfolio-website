@@ -1,14 +1,7 @@
 import { BookMarked } from "lucide-react";
 import Link from "next/link";
 import { Button, buttonVariants } from "./ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "./ui/card";
+import { Card, CardContent } from "./ui/card";
 
 type CardProjectProps = {
   repoName: string;
@@ -26,24 +19,40 @@ export default function ProjectCard({
   hostingURL,
 }: CardProjectProps) {
   return (
-    <Card className="w-72 p-3">
+    <Card className="w-72 pt-4">
       <CardContent className="flex h-full flex-col justify-around text-center">
         <h3 className="text-lg font-bold">
-          <BookMarked className="mr-2 inline h-5 w-5 text-green-700" />
+          <BookMarked className="mr-2 inline h-6 w-6 text-green-700" />
           {repoName}
         </h3>
-        <p className="text-lg">{repoDescription}</p>
-        <small className="text-md mt-2 font-semibold text-blue-500">
+        <p className="mt-2 text-lg">{repoDescription}</p>
+        <small
+          className={`mt-2 text-base font-semibold text-blue-500 ${
+            languages === "JavaScript"
+              ? "text-[#f7df1e]"
+              : languages === "TypeScript"
+                ? "text-[#007acc]"
+                : languages === "Go"
+                  ? "text-[#00ADD8]"
+                  : languages === "C#"
+                    ? "text-[#684D95]"
+                    : "text-white"
+          }`}
+        >
           {languages}
         </small>
         <br />
-        <div className="flex justify-center gap-4">
+        <div className="flex justify-center gap-3">
           <Button asChild variant="outline" className="text-lg">
             <Link target="_blank" href={repoURL as string}>
               Repo
             </Link>
           </Button>
-          <Button asChild variant="outline" className="text-lg">
+          <Button
+            asChild
+            variant={hostingURL === null ? "disabledOutline" : `outline`}
+            className="text-lg"
+          >
             <Link target="_blank" href={(hostingURL as string) || ""}>
               Visit
             </Link>
