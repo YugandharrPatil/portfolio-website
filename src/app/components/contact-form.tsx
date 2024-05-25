@@ -19,7 +19,7 @@ import { Loader2 } from "lucide-react";
 import type { FieldValues } from "react-hook-form";
 import { useForm } from "react-hook-form";
 
-import addMessage from "../actions/form-action";
+// import addMessage from "../actions/form-action";
 
 export default function ContactForm() {
   const {
