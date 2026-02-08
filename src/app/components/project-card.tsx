@@ -5,10 +5,10 @@ import { Card, CardContent } from "./ui/card";
 
 type CardProjectProps = {
   repoName: string;
-  repoDescription: string;
-  languages: string;
+  repoDescription?: string | null;
+  languages?: string | null;
   repoURL: string;
-  hostingURL?: string;
+  hostingURL?: string | null;
 };
 
 export default function ProjectCard({
@@ -25,7 +25,7 @@ export default function ProjectCard({
           <BookMarked className="mr-2 inline h-6 w-6 text-green-700" />
           {repoName}
         </h3>
-        <p className="mt-2 text-lg">{repoDescription}</p>
+        <p className="mt-2 text-lg">{repoDescription || "—"}</p>
         <small
           className={`mt-2 text-base font-semibold text-blue-500 ${
             languages === "JavaScript"
@@ -39,7 +39,7 @@ export default function ProjectCard({
                     : "text-white"
           }`}
         >
-          {languages}
+          {languages || "—"}
         </small>
         <br />
         <div className="flex justify-center gap-3">
@@ -48,15 +48,13 @@ export default function ProjectCard({
               Repo
             </Link>
           </Button>
-          <Button
-            asChild
-            variant="secondary"
-            className="text-lg"
-          >
-            <Link target="_blank" href={(hostingURL as string) || ""}>
-              Visit
-            </Link>
-          </Button>
+          {!!hostingURL && (
+            <Button asChild variant="secondary" className="text-lg">
+              <Link target="_blank" href={hostingURL}>
+                Visit
+              </Link>
+            </Button>
+          )}
         </div>
       </CardContent>
     </Card>
