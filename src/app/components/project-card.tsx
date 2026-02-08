@@ -43,14 +43,14 @@ export default function ProjectCard({
         </small>
         <br />
         <div className="flex justify-center gap-3">
-          <Button asChild variant="outline" className="text-lg">
+          <Button asChild variant="default" className="text-lg">
             <Link target="_blank" href={repoURL as string}>
               Repo
             </Link>
           </Button>
           <Button
             asChild
-            variant={hostingURL === null ? "disabledOutline" : `outline`}
+            variant="secondary"
             className="text-lg"
           >
             <Link target="_blank" href={(hostingURL as string) || ""}>

@@ -7,6 +7,13 @@ export const poppins = Poppins({
   variable: "--font-poppins",
 });
 
+// export const Inter = Inter({
+//   weight: ["400", "500", "700"],
+//   subsets: ["latin"],
+//   display: "swap",
+//   variable: "--font-inter",
+// });
+
 export const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
   display: "swap",

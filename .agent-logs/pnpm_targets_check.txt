@@ -1,0 +1,47 @@
+node_modules/.pnpm exists?
+total 2484
+drwxr-xr-x 553 root root  36864 Feb  8 17:28 .
+drwxr-xr-x   8 root root   4096 Feb  8 17:28 ..
+drwxr-xr-x   3 root root   4096 Feb  8 17:28 acorn@8.15.0
+drwxr-xr-x   3 root root   4096 Feb  8 17:28 acorn-jsx@5.3.2_acorn@8.15.0
+drwxr-xr-x   3 root root   4096 Feb  8 17:28 ajv@6.12.6
+drwxr-xr-x   3 root root   4096 Feb  8 17:28 @alloc+quick-lru@5.2.0
+drwxr-xr-x   3 root root   4096 Feb  8 17:28 ansi-regex@5.0.1
+drwxr-xr-x   3 root root   4096 Feb  8 17:28 ansi-styles@4.3.0
+drwxr-xr-x   3 root root   4096 Feb  8 17:28 anymatch@3.1.3
+drwxr-xr-x   3 root root   4096 Feb  8 17:28 any-promise@1.3.0
+drwxr-xr-x   3 root root   4096 Feb  8 17:28 arg@5.0.2
+drwxr-xr-x   3 root root   4096 Feb  8 17:28 argparse@2.0.1
+drwxr-xr-x   3 root root   4096 Feb  8 17:28 aria-hidden@1.2.6
+drwxr-xr-x   3 root root   4096 Feb  8 17:28 aria-query@5.3.2
+drwxr-xr-x   3 root root   4096 Feb  8 17:28 array-buffer-byte-length@1.0.2
+drwxr-xr-x   3 root root   4096 Feb  8 17:28 arraybuffer.prototype.slice@1.0.4
+drwxr-xr-x   3 root root   4096 Feb  8 17:28 array-includes@3.1.9
+drwxr-xr-x   3 root root   4096 Feb  8 17:28 array.prototype.findlast@1.2.5
+drwxr-xr-x   3 root root   4096 Feb  8 17:28 array.prototype.findlastindex@1.2.6
+drwxr-xr-x   3 root root   4096 Feb  8 17:28 array.prototype.flat@1.3.3
+drwxr-xr-x   3 root root   4096 Feb  8 17:28 array.prototype.flatmap@1.3.3
+drwxr-xr-x   3 root root   4096 Feb  8 17:28 array.prototype.tosorted@1.1.4
+drwxr-xr-x   3 root root   4096 Feb  8 17:28 ast-types-flow@0.0.8
+drwxr-xr-x   3 root root   4096 Feb  8 17:28 async-function@1.0.0
+drwxr-xr-x   3 root root   4096 Feb  8 17:28 asynckit@0.4.0
+drwxr-xr-x   3 root root   4096 Feb  8 17:28 autoprefixer@10.4.16_postcss@8.4.32
+drwxr-xr-x   3 root root   4096 Feb  8 17:28 available-typed-arrays@1.0.7
+drwxr-xr-x   3 root root   4096 Feb  8 17:28 aws-ssl-profiles@1.1.2
+drwxr-xr-x   3 root root   4096 Feb  8 17:28 axe-core@4.11.1
+drwxr-xr-x   3 root root   4096 Feb  8 17:28 axios@1.13.4
+drwxr-xr-x   3 root root   4096 Feb  8 17:28 axobject-query@4.1.0
+drwxr-xr-x   3 root root   4096 Feb  8 17:28 @babel+code-frame@7.29.0
+drwxr-xr-x   3 root root   4096 Feb  8 17:28 @babel+compat-data@7.29.0
+drwxr-xr-x   3 root root   4096 Feb  8 17:28 @babel+core@7.29.0
+drwxr-xr-x   3 root root   4096 Feb  8 17:28 @babel+generator@7.29.1
+drwxr-xr-x   3 root root   4096 Feb  8 17:28 @babel+helper-compilation-targets@7.28.6
+drwxr-xr-x   3 root root   4096 Feb  8 17:28 @babel+helper-globals@7.28.0
+drwxr-xr-x   3 root root   4096 Feb  8 17:28 @babel+helper-module-imports@7.28.6
+drwxr-xr-x   3 root root   4096 Feb  8 17:28 @babel+helper-module-transforms@7.28.6_@babel+core@7.29.0
+---
+react type target:
+-rw-r--r-- 3 root root 177284 Feb  7 13:33 node_modules/.pnpm/@types+react@19.2.13/node_modules/@types/react/index.d.ts
+---
+react-dom type target:
+-rw-r--r-- 14 root root 4541 Oct  3 20:26 node_modules/.pnpm/@types+react-dom@19.2.3_@types+react@19.2.13/node_modules/@types/react-dom/index.d.ts

@@ -1,15 +1,15 @@
-// FONTS
-import { poppins } from "@/utils/fonts";
-
 // UI
 import {
   Bone,
+  BrainCogIcon,
   ExternalLink,
   HelpCircle,
+  Home,
   Layout,
   Menu,
   Pencil,
   Send,
+  User,
 } from "lucide-react";
 import { Button } from "./ui/button";
 import {
@@ -22,25 +22,68 @@ import {
 // UTILS
 import Link from "next/link";
 import ThemeToggle from "./theme-toggle";
+import type { LucideIcon } from "lucide-react";
 
 const BLOG_LINK = "https://yugz.hashnode.dev";
+
+type NavItem = {
+  label: string;
+  href: string;
+  external?: boolean;
+  desktop?: boolean;
+  mobile?: boolean;
+  mobileIcon?: LucideIcon;
+};
+
+const NAV_ITEMS: NavItem[] = [
+  { label: "Home", href: "#", desktop: true },
+  {
+    label: "About",
+    href: "#about",
+    desktop: true,
+    mobile: true,
+    mobileIcon: HelpCircle,
+  },
+  {
+    label: "Skills",
+    href: "#skills",
+    desktop: true,
+    mobile: true,
+    mobileIcon: Bone,
+  },
+  {
+    label: "Projects",
+    href: "#projects",
+    desktop: true,
+    mobile: true,
+    mobileIcon: Layout,
+  },
+  {
+    label: "Blog",
+    href: BLOG_LINK,
+    desktop: true,
+    mobile: true,
+    external: true,
+    mobileIcon: Pencil,
+  },
+  {
+    label: "Let&apos;s Chat",
+    href: "#contact",
+    mobile: true,
+    mobileIcon: Send,
+  },
+];
 
 export default function Navbar() {
   return (
     <>
-      <nav
-        // className={`fixed z-50 h-24 w-full border-b border-gray-800 bg-background ${poppins.variable}`}
-        className={`fixed top-0 z-50 flex h-24 w-full border-b border-gray-800 bg-background ${poppins.variable}`}
-      >
-        {/* ${
-          theme === "light" ? "bg-white" : "bg-dark"
-        } */}
+      <nav className="fixed top-0 z-50 flex h-24 w-full border-b border-gray-800 bg-background font-poppins">
         <div className="container relative flex h-full w-full items-center justify-between">
           {/* LOGO */}
           <div>
             <Link href="#">
               <h1
-                className={`font-poppins text-3xl font-bold hover:text-neutral-500`}
+                className="text-3xl font-bold hover:text-neutral-500"
               >
                 Yugz<span className="text-orange-500">.</span>
               </h1>
@@ -48,40 +91,31 @@ export default function Navbar() {
           </div>
 
           {/* NAV BUTTONS */}
-          {/* <div className="mx-auto flex w-fit"> */}
           {/* DESKTOP NAVBAR */}
           <div
             className={`absolute left-1/2 hidden -translate-x-1/2 transform lg:block`}
           >
             {/* buttons flex automatically since they're inline elements */}
-            <Button className={`navButton font-poppins`} variant="ghost">
-              <Link href="#">Home</Link>
-            </Button>
-            <Button className={`navButton font-poppins`} variant="ghost">
-              <Link href="#about">About</Link>
-            </Button>
-            <Button className={`navButton font-poppins`} variant="ghost">
-              <Link href="#skills">Skills</Link>
-            </Button>
-            <Button className={`navButton font-poppins`} variant="ghost">
-              <Link href="/projects">Projects</Link>
-            </Button>
-            <Button className={`navButton font-poppins`} variant="ghost">
-              <Link href={BLOG_LINK} target="_blank">
-                Blog
-              </Link>
-              <ExternalLink className="ms-1 inline h-5 w-5" />
-            </Button>
-            {/* <NavItem navText="Home" target="#" variant="ghost" />
-            <NavItem navText="About" target="#about" variant="ghost" />
-            <NavItem navText="Skills" target="#skills" variant="ghost" />
-            <NavItem navText="Projects" target="/projects" variant="ghost" />
-            <NavItem
-              newTab
-              navText="Blog"
-              variant="ghost"
-              target="https://yugz.hashnode.dev"
-            /> */}
+            {NAV_ITEMS.filter((item) => item.desktop).map((item) => (
+              <Button
+                key={`${item.label}-${item.href}`}
+                className="navButton"
+                variant="ghost"
+                asChild
+              >
+                <Link
+                  href={item.href}
+                  target={item.external ? "_blank" : undefined}
+                  rel={item.external ? "noreferrer" : undefined}
+                  className="flex items-center"
+                >
+                  <span>{item.label}</span>
+                  {item.external && (
+                    <ExternalLink className="ms-1 inline h-5 w-5" />
+                  )}
+                </Link>
+              </Button>
+            ))}
           </div>
 
           {/* MOBILE NAVBAR */}
@@ -93,45 +127,32 @@ export default function Navbar() {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-32">
-                <DropdownMenuItem asChild>
-                  <span className="w-full bg-background font-poppins">
-                    <HelpCircle className="mr-2 inline h-4 w-4" />
-                    <Link href="#about">About</Link>
-                  </span>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <span className="w-full bg-background font-poppins">
-                    <Bone className="mr-2 inline h-4 w-4" />
-                    <Link href="#skills">Skills</Link>
-                  </span>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <span className="bg-background font-poppins">
-                    <Layout className="mr-2 inline h-4 w-4" />
-                    <Link href="/projects">Projects</Link>
-                  </span>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <span className="bg-background font-poppins">
-                    <Pencil className="mr-2 inline h-4 w-4" />
-                    <Link href={BLOG_LINK} target="_blank">
-                      Blog <ExternalLink className="inline h-4 w-4" />
-                    </Link>
-                  </span>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <span className="bg-background">
-                    <Send className="mr-2 inline h-4 w-4" />
-                    <Link href="#contact">Let&apos;s Chat</Link>
-                  </span>
-                </DropdownMenuItem>
+                {NAV_ITEMS.filter((item) => item.mobile).map((item) => {
+                  const Icon = item.mobileIcon;
+                  return (
+                    <DropdownMenuItem key={`${item.label}-${item.href}`} asChild>
+                      <Link
+                        href={item.href}
+                        target={item.external ? "_blank" : undefined}
+                        rel={item.external ? "noreferrer" : undefined}
+                        className="flex w-full items-center bg-background"
+                      >
+                        {Icon && <Icon className="mr-2 inline h-4 w-4" />}
+                        <span>{item.label}</span>
+                        {item.external && (
+                          <ExternalLink className="ml-1 inline h-4 w-4" />
+                        )}
+                      </Link>
+                    </DropdownMenuItem>
+                  );
+                })}
               </DropdownMenuContent>
             </DropdownMenu>
             <ThemeToggle />
           </div>
           <div className="flex gap-2 max-lg:hidden">
             <Button
-              className="navButton font-poppins font-bold"
+              className="navButton font-bold"
               variant="outline"
             >
               <Link href="#contact">Let&apos;s Chat</Link>
