@@ -22,7 +22,7 @@ import { useForm } from "react-hook-form";
 
 // FIREBASE
 import { firestore } from "@/lib/utils/firebase/config";
-import { addDoc, collection, Timestamp } from "firebase/firestore/lite";
+import { addDoc, collection, Timestamp } from "firebase/firestore";
 
 export default function ContactForm() {
   const {

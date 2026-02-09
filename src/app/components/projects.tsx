@@ -1,30 +1,29 @@
 import fetchRepos from "@/lib/utils/calls";
-import Link from "next/link";
+import { GitHubRepo } from "@/lib/utils/types";
+import { collection, getDocs, orderBy, query } from "firebase/firestore";
+import { firestore } from "../../lib/utils/firebase/config";
 import ProjectCard from "./project-card";
-import { Card } from "./ui/card";
-
-const REPOS = [
-  "openai-api",
-  "blockchain-from-scratch",
-  "gramhealth-demo",
-  "lettering-by-muskan",
-  "desert-runner",
-  "gold-rush",
-  "weather",
-];
 
 export default async function Projects() {
   const fetchedRepos = await fetchRepos();
+  const q = query(collection(firestore, "repos"), orderBy("order", "asc"));
+  const querySnapshot = await getDocs(q);
+  let repos: GitHubRepo[] = [];
+  querySnapshot.forEach((doc) => {
+    repos.push(doc.data() as GitHubRepo);
+  });
 
-  const repos = REPOS.map((name) =>
-    fetchedRepos.find((repo: any) => repo?.name === name),
-  ).filter(Boolean) as any[];
+  const filteredRepos = repos
+    .map((r) => fetchedRepos.find((repo) => repo.name === r.name))
+    .filter((repo): repo is GitHubRepo => Boolean(repo));
+
+  console.log(filteredRepos);
 
   return (
-    <main className="container relative">
+    <main className="relative container">
       <h1 className="heading">Projects</h1>
       <div className="flex w-fit flex-wrap justify-center gap-4 p-4">
-        {repos.map((repo: any) => (
+        {filteredRepos.map((repo: GitHubRepo) => (
           <ProjectCard
             key={repo.id}
             repoName={repo.name}
