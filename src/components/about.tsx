@@ -3,7 +3,7 @@ const ABOUT_ME =
 
 export default function About() {
   return (
-    <main className="container">
+    <main>
       <h1 className="heading">About Me</h1>
       <p className="text-center">{ABOUT_ME}</p>
     </main>

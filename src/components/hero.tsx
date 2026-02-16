@@ -1,20 +1,16 @@
-import { playfairDisplay, sourceCodePro } from "@/utils/fonts";
 import Image from "next/image";
 // import flag from "../../../public/flag.png";
 // import profilePic from "../../../public/images/profile/pic.jpeg";
-import profilePic from "../../../public/images/profile/sex.jpg";
+import profilePic from "../../public/images/profile/sex.jpg";
 import SocialIcons from "./social-icons";
 
 export default function Hero() {
   return (
-    <main
-      id="about"
-      className="container mt-32 flex flex-col items-center justify-center bg-background xl:flex-row"
-    >
+    <main className="bg-background mt-32 flex flex-col items-center justify-center xl:flex-row">
       {/* TEXT SECTION */}
       <div className="order-last text-center xl:order-first xl:w-1/2 xl:text-left">
         <h1
-          className={`text-5xl font-black leading-tight tracking-normal max-xl:my-10 sm:text-7xl xl:text-8xl ${playfairDisplay.variable} font-playfairDisplay`}
+          className={`font-playfairDisplay text-5xl leading-tight font-black tracking-normal max-xl:my-10 sm:text-7xl xl:text-8xl`}
         >
           Hi! I&apos;m <br />
           <span className="tracking-wide">
@@ -25,7 +21,7 @@ export default function Hero() {
           </span>
         </h1>
         <h3
-          className={`${sourceCodePro.className} mt-5 text-2xl font-medium text-gray-600 lg:mt-8`}
+          className={`font-sourceCodePro mt-5 text-2xl font-medium text-gray-600 lg:mt-8`}
         >
           Indie Hacker | Developer | Tinkerer
         </h3>
@@ -38,7 +34,6 @@ export default function Hero() {
             className="object-cover"
             quality={100}
             placeholder="blur"
-            // w-full max-xl:mx-auto sm:h-160 sm:w-auto xl:ms-auto 2xl:h-full
             src={profilePic}
             fill
             alt="profile"

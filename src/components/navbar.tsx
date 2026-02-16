@@ -20,9 +20,9 @@ import {
 } from "./ui/dropdown-menu";
 
 // UTILS
+import type { LucideIcon } from "lucide-react";
 import Link from "next/link";
 import ThemeToggle from "./theme-toggle";
-import type { LucideIcon } from "lucide-react";
 
 const BLOG_LINK = "https://yugz.hashnode.dev";
 
@@ -67,7 +67,7 @@ const NAV_ITEMS: NavItem[] = [
     mobileIcon: Pencil,
   },
   {
-    label: "Let&apos;s Chat",
+    label: "Let's Chat",
     href: "#contact",
     mobile: true,
     mobileIcon: Send,
@@ -77,14 +77,12 @@ const NAV_ITEMS: NavItem[] = [
 export default function Navbar() {
   return (
     <>
-      <nav className="fixed top-0 z-50 flex h-24 w-full border-b border-gray-800 bg-background font-poppins">
-        <div className="container relative flex h-full w-full items-center justify-between">
+      <nav className="bg-background font-poppins fixed top-0 z-50 flex h-24 w-full border-b border-gray-800">
+        <div className="relative container flex h-full w-full items-center justify-between">
           {/* LOGO */}
           <div>
-            <Link href="#">
-              <h1
-                className="text-3xl font-bold hover:text-neutral-500"
-              >
+            <Link href="/" scroll>
+              <h1 className="text-3xl font-bold hover:text-neutral-500">
                 Yugz<span className="text-orange-500">.</span>
               </h1>
             </Link>
@@ -99,7 +97,7 @@ export default function Navbar() {
             {NAV_ITEMS.filter((item) => item.desktop).map((item) => (
               <Button
                 key={`${item.label}-${item.href}`}
-                className="navButton"
+                className="mx-1 text-base tracking-wide"
                 variant="ghost"
                 asChild
               >
@@ -130,12 +128,15 @@ export default function Navbar() {
                 {NAV_ITEMS.filter((item) => item.mobile).map((item) => {
                   const Icon = item.mobileIcon;
                   return (
-                    <DropdownMenuItem key={`${item.label}-${item.href}`} asChild>
+                    <DropdownMenuItem
+                      key={`${item.label}-${item.href}`}
+                      asChild
+                    >
                       <Link
                         href={item.href}
                         target={item.external ? "_blank" : undefined}
                         rel={item.external ? "noreferrer" : undefined}
-                        className="flex w-full items-center bg-background"
+                        className="bg-background flex w-full items-center"
                       >
                         {Icon && <Icon className="mr-2 inline h-4 w-4" />}
                         <span>{item.label}</span>
@@ -152,7 +153,7 @@ export default function Navbar() {
           </div>
           <div className="flex gap-2 max-lg:hidden">
             <Button
-              className="navButton font-bold"
+              className="mx-1 text-base font-bold tracking-wide"
               variant="outline"
             >
               <Link href="#contact">Let&apos;s Chat</Link>

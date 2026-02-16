@@ -1,7 +1,7 @@
 import fetchRepos from "@/lib/utils/calls";
+import { firestore } from "@/lib/utils/firebase/config";
 import { GitHubRepo } from "@/lib/utils/types";
 import { collection, getDocs, orderBy, query } from "firebase/firestore";
-import { firestore } from "../../lib/utils/firebase/config";
 import ProjectCard from "./project-card";
 
 export default async function Projects() {
@@ -17,7 +17,7 @@ export default async function Projects() {
     .map((r) => fetchedRepos.find((repo) => repo.name === r.name))
     .filter((repo): repo is GitHubRepo => Boolean(repo));
 
-  console.log(filteredRepos);
+  // console.log(filteredRepos);
 
   return (
     <main className="relative container">
