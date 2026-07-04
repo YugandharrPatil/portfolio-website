@@ -20,7 +20,7 @@ export default async function Projects() {
   // console.log(filteredRepos);
 
   return (
-    <main className="relative container">
+    <main className="relative container mx-auto">
       <h1 className="heading">Projects</h1>
       <div className="flex w-fit flex-wrap justify-center gap-4 p-4">
         {filteredRepos.map((repo: GitHubRepo) => (

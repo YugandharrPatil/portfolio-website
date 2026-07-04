@@ -6,7 +6,7 @@ import SocialIcons from "./social-icons";
 
 export default function Hero() {
   return (
-    <main className="bg-background mt-32 flex flex-col items-center justify-center xl:flex-row">
+    <main className="bg-background mt-32 flex flex-col items-center justify-center xl:flex-row container mx-auto">
       {/* TEXT SECTION */}
       <div className="order-last text-center xl:order-first xl:w-1/2 xl:text-left">
         <h1
@@ -23,7 +23,9 @@ export default function Hero() {
         <h3
           className={`font-sourceCodePro mt-5 text-2xl font-medium text-gray-600 lg:mt-8`}
         >
-          Indie Hacker | Developer | Tinkerer
+          {/* Indie Hacker | Developer | Tinkerer */}
+          {/* Autodidactic Computer Nerd */}
+          Builder | Computer Nerd | Autodidact
         </h3>
         <SocialIcons />
       </div>

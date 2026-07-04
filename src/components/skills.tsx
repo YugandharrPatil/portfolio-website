@@ -21,31 +21,31 @@ const SKILL_CARDS: SkillCardType[] = [
     heading: "Languages",
     iconList: languages,
   },
-  {
-    id: "devops",
-    heading: "Architecture",
-    iconList: devOps,
-  },
+  // {
+  //   id: "devops",
+  //   heading: "Architecture",
+  //   iconList: devOps,
+  // },
   {
     id: "webdev",
-    heading: "Web Dev",
+    heading: "Application Development",
     iconList: webDev,
   },
-  {
-    id: "gamedev",
-    heading: "Game Dev",
-    iconList: gameDev,
-  },
-  {
-    id: "misc",
-    heading: "Misc",
-    iconList: misc,
-  },
+  // {
+  //   id: "gamedev",
+  //   heading: "Game Dev",
+  //   iconList: gameDev,
+  // },
+  // {
+  //   id: "misc",
+  //   heading: "Misc",
+  //   iconList: misc,
+  // },
 ];
 
 export default function Skills() {
   return (
-    <main className="container">
+    <main className="container mx-auto">
       <h1 className="heading">Skills</h1>
       <div className="flex flex-wrap justify-center gap-4">
         {SKILL_CARDS.map((skill) => (

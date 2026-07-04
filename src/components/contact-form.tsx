@@ -82,7 +82,7 @@ export default function ContactForm() {
   };
 
   return (
-    <main className="container">
+    <main className="container mx-auto">
       <h1 className="heading">Connect with Me!</h1>
       <Card className="mx-auto mb-10 max-w-lg">
         <CardHeader className="text-center">

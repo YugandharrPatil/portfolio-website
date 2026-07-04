@@ -34,7 +34,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${poppinsFont.variable} ${playfairDisplay.variable} ${sourceCodePro.variable} container mx-auto antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${poppinsFont.variable} ${playfairDisplay.variable} ${sourceCodePro.variable} antialiased`}
       >
         <ThemeProvider attribute="class" defaultTheme="dark">
           <ClientSideProviders>{children}</ClientSideProviders>

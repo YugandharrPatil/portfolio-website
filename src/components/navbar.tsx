@@ -24,7 +24,8 @@ import type { LucideIcon } from "lucide-react";
 import Link from "next/link";
 import ThemeToggle from "./theme-toggle";
 
-const BLOG_LINK = "https://yugz.hashnode.dev";
+const BLOG_LINK_LEGACY = "https://yugz.hashnode.dev";
+const BLOG_LINK = "https://blog-site-yugz.vercel.app/";
 
 type NavItem = {
   label: string;
@@ -77,8 +78,8 @@ const NAV_ITEMS: NavItem[] = [
 export default function Navbar() {
   return (
     <>
-      <nav className="bg-background font-poppins fixed top-0 z-50 flex h-24 w-full border-b border-gray-800">
-        <div className="relative container flex h-full w-full items-center justify-between">
+      <nav className="bg-background font-poppins fixed top-0 z-50 flex h-24 w-full mx-auto border-b border-gray-800">
+        <div className="relative container flex h-full w-full items-center justify-between mx-auto">
           {/* LOGO */}
           <div>
             <Link href="/" scroll>
